@@ -21,10 +21,10 @@
 export default {
   name: 'IndexPage',
   auth: false,
-  computed:{
-    user(){
-      return this.$auth.$state
+  computed: {
+    user() {
+      return this.$auth.$state;
     }
   }
-}
+};
 </script>
