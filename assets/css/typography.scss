@@ -1,0 +1,364 @@
+$line-height--normal: normal;
+$font-weight--normal: normal;
+$font-weight--regular: 200;
+$font-weight--medium: 400;
+$font-weight--semi-bold: 600;
+$font-weight--bold: bold;
+$font-weight--extra-bold: 800;
+$font-weight--mega-bold: 900;
+
+.app {
+  &-heading {
+    &--1 {
+      font-size: 96px;
+      font-weight: $line-height--normal;
+      line-height: $line-height--normal;
+      &-regular {
+        font-size: 96px;
+        font-weight: $font-weight--regular;
+        line-height: $line-height--normal;
+      }
+      &-medium {
+        font-size: 96px;
+        font-weight: $font-weight--medium;
+        line-height: $line-height--normal;
+      }
+      &-bold {
+        font-size: 96px;
+        font-weight: $font-weight--bold;
+        line-height: $line-height--normal;
+      }
+      &-extra-bold {
+        font-size: 96px;
+        font-weight: $font-weight--extra-bold;
+        line-height: $line-height--normal;
+      }
+      &-mega-bold {
+        font-size: 96px;
+        font-weight: $font-weight--mega-bold;
+        line-height: $line-height--normal;
+      }
+    }
+    &--2 {
+      font-size: 60px;
+      font-weight: $line-height--normal;
+      line-height: $line-height--normal;
+
+      &-regular {
+        font-size: 60px;
+        font-weight: $font-weight--regular;
+        line-height: $line-height--normal;
+      }
+      &-medium {
+        font-size: 60px;
+        font-weight: $font-weight--medium;
+        line-height: $line-height--normal;
+      }
+      &-bold {
+        font-size: 60px;
+        font-weight: $font-weight--bold;
+        line-height: $line-height--normal;
+      }
+      &-extra-bold {
+        font-size: 60px;
+        font-weight: $font-weight--extra-bold;
+        line-height: $line-height--normal;
+      }
+      &-mega-bold {
+        font-size: 60px;
+        font-weight: $font-weight--mega-bold;
+        line-height: $line-height--normal;
+      }
+    }
+    &--3 {
+      font-size: 48px;
+      font-weight: $line-height--normal;
+      line-height: $line-height--normal;
+
+      &-regular {
+        font-size: 48px;
+        font-weight: $font-weight--regular;
+        line-height: $line-height--normal;
+      }
+      &-medium {
+        font-size: 48px;
+        font-weight: $font-weight--medium;
+        line-height: $line-height--normal;
+      }
+      &-bold {
+        font-size: 48px;
+        font-weight: $font-weight--bold;
+        line-height: $line-height--normal;
+      }
+      &-extra-bold {
+        font-size: 48px;
+        font-weight: $font-weight--extra-bold;
+        line-height: $line-height--normal;
+      }
+      &-mega-bold {
+        font-size: 48px;
+        font-weight: $font-weight--mega-bold;
+        line-height: $line-height--normal;
+      }
+    }
+    &--4 {
+      font-size: 34px;
+      font-weight: $line-height--normal;
+      line-height: $line-height--normal;
+
+      &-regular {
+        font-size: 34px;
+        font-weight: $font-weight--regular;
+        line-height: $line-height--normal;
+      }
+      &-medium {
+        font-size: 34px;
+        font-weight: $font-weight--medium;
+        line-height: $line-height--normal;
+      }
+      &-bold {
+        font-size: 34px;
+        font-weight: $font-weight--bold;
+        line-height: $line-height--normal;
+      }
+      &-extra-bold {
+        font-size: 34px;
+        font-weight: $font-weight--extra-bold;
+        line-height: $line-height--normal;
+      }
+      &-mega-bold {
+        font-size: 34px;
+        font-weight: $font-weight--mega-bold;
+        line-height: $line-height--normal;
+      }
+    }
+    &--5 {
+      font-size: 24px;
+      font-weight: $line-height--normal;
+      line-height: $line-height--normal;
+
+      &-regular {
+        font-size: 24px;
+        font-weight: $font-weight--regular;
+        line-height: $line-height--normal;
+      }
+      &-medium {
+        font-size: 24px;
+        font-weight: $font-weight--medium;
+        line-height: $line-height--normal;
+      }
+      &-bold {
+        font-size: 24px;
+        font-weight: $font-weight--bold;
+        line-height: $line-height--normal;
+      }
+      &-extra-bold {
+        font-size: 24px;
+        font-weight: $font-weight--extra-bold;
+        line-height: $line-height--normal;
+      }
+      &-mega-bold {
+        font-size: 24px;
+        font-weight: $font-weight--mega-bold;
+        line-height: $line-height--normal;
+      }
+    }
+    &--6 {
+      font-size: 20px;
+      font-weight: $line-height--normal;
+      line-height: $line-height--normal;
+
+      &-regular {
+        font-size: 20px;
+        font-weight: $font-weight--regular;
+        line-height: $line-height--normal;
+      }
+      &-medium {
+        font-size: 20px;
+        font-weight: $font-weight--medium;
+        line-height: $line-height--normal;
+      }
+      &-bold {
+        font-size: 20px;
+        font-weight: $font-weight--bold;
+        line-height: $line-height--normal;
+      }
+      &-extra-bold {
+        font-size: 20px;
+        font-weight: $font-weight--extra-bold;
+        line-height: $line-height--normal;
+      }
+      &-mega-bold {
+        font-size: 20px;
+        font-weight: $font-weight--mega-bold;
+        line-height: $line-height--normal;
+      }
+    }
+  }
+  &-subtitle {
+    &--1 {
+      font-size: 16px;
+      font-weight: $line-height--normal;
+      line-height: $line-height--normal;
+      letter-spacing: -1px;
+      &-regular {
+        font-size: 16px;
+        font-weight: $font-weight--regular;
+        line-height: $line-height--normal;
+        letter-spacing: -1px;
+      }
+      &-medium {
+        font-size: 16px;
+        font-weight: $font-weight--medium;
+        line-height: $line-height--normal;
+        letter-spacing: -1px;
+      }
+      &-bold {
+        font-size: 16px;
+        font-weight: $font-weight--bold;
+        line-height: $line-height--normal;
+        letter-spacing: -1px;
+      }
+      &-extra-bold {
+        font-size: 16px;
+        font-weight: $font-weight--extra-bold;
+        line-height: $line-height--normal;
+        letter-spacing: -1px;
+      }
+      &-mega-bold {
+        font-size: 16px;
+        font-weight: $font-weight--mega-bold;
+        line-height: $line-height--normal;
+        letter-spacing: -1px;
+      }
+    }
+    &--2 {
+      font-size: 14px;
+      font-weight: $line-height--normal;
+      line-height: $line-height--normal;
+      letter-spacing: -1px;
+      &-regular {
+        font-size: 14px;
+        font-weight: $font-weight--regular;
+        line-height: $line-height--normal;
+        letter-spacing: -1px;
+      }
+      &-medium {
+        font-size: 14px;
+        font-weight: $font-weight--medium;
+        line-height: $line-height--normal;
+        letter-spacing: -1px;
+      }
+      &-bold {
+        font-size: 14px;
+        font-weight: $font-weight--bold;
+        line-height: $line-height--normal;
+        letter-spacing: -1px;
+      }
+      &-extra-bold {
+        font-size: 14px;
+        font-weight: $font-weight--extra-bold;
+        line-height: $line-height--normal;
+        letter-spacing: -1px;
+      }
+      &-mega-bold {
+        font-size: 14px;
+        font-weight: $font-weight--mega-bold;
+        line-height: $line-height--normal;
+        letter-spacing: -1px;
+      }
+    }
+  }
+  &-body {
+    &--1 {
+      font-size: 16px;
+      font-weight: $line-height--normal;
+      line-height: $line-height--normal;
+      &-regular {
+        font-size: 16px;
+        font-weight: $font-weight--regular;
+        line-height: $line-height--normal;
+      }
+      &-medium {
+        font-size: 16px;
+        font-weight: $font-weight--medium;
+        line-height: $line-height--normal;
+      }
+      &-bold {
+        font-size: 16px;
+        font-weight: $font-weight--bold;
+        line-height: $line-height--normal;
+      }
+      &-extra-bold {
+        font-size: 16px;
+        font-weight: $font-weight--extra-bold;
+        line-height: $line-height--normal;
+      }
+      &-mega-bold {
+        font-size: 16px;
+        font-weight: $font-weight--mega-bold;
+        line-height: $line-height--normal;
+      }
+    }
+    &--2 {
+      font-size: 14px;
+      font-weight: $line-height--normal;
+      line-height: $line-height--normal;
+      &-regular {
+        font-size: 14px;
+        font-weight: $font-weight--regular;
+        line-height: $line-height--normal;
+      }
+      &-medium {
+        font-size: 14px;
+        font-weight: $font-weight--medium;
+        line-height: $line-height--normal;
+      }
+      &-bold {
+        font-size: 14px;
+        font-weight: $font-weight--bold;
+        line-height: $line-height--normal;
+      }
+      &-extra-bold {
+        font-size: 14px;
+        font-weight: $font-weight--extra-bold;
+        line-height: $line-height--normal;
+      }
+      &-mega-bold {
+        font-size: 14px;
+        font-weight: $font-weight--mega-bold;
+        line-height: $line-height--normal;
+      }
+    }
+  }
+  &-caption {
+    font-size: 12px;
+    font-weight: $line-height--normal;
+    line-height: $line-height--normal;
+    &-regular {
+      font-size: 12px;
+      font-weight: $font-weight--regular;
+      line-height: $line-height--normal;
+    }
+    &-medium {
+      font-size: 12px;
+      font-weight: $font-weight--medium;
+      line-height: $line-height--normal;
+    }
+    &-bold {
+      font-size: 12px;
+      font-weight: $font-weight--bold;
+      line-height: $line-height--normal;
+    }
+    &-extra-bold {
+      font-size: 12px;
+      font-weight: $font-weight--extra-bold;
+      line-height: $line-height--normal;
+    }
+    &-mega-bold {
+      font-size: 12px;
+      font-weight: $font-weight--mega-bold;
+      line-height: $line-height--normal;
+    }
+  }
+}
