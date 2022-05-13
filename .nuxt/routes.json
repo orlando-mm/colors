@@ -1,0 +1,44 @@
+[
+  {
+    "name": "index___en",
+    "path": "/en",
+    "component": "C:\\\\Users\\\\Orlando\\\\WebstormProjects\\\\syp\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_600fe44a"
+  },
+  {
+    "name": "index___es",
+    "path": "/es",
+    "component": "C:\\\\Users\\\\Orlando\\\\WebstormProjects\\\\syp\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_600fe44a"
+  },
+  {
+    "name": "aboutus___en",
+    "path": "/en/about-us",
+    "component": "C:\\\\Users\\\\Orlando\\\\WebstormProjects\\\\syp\\\\pages\\\\aboutus\\\\index.vue",
+    "chunkName": "pages/aboutus/index",
+    "_name": "_14851264"
+  },
+  {
+    "name": "login___en",
+    "path": "/en/login",
+    "component": "C:\\\\Users\\\\Orlando\\\\WebstormProjects\\\\syp\\\\pages\\\\login.vue",
+    "chunkName": "pages/login",
+    "_name": "_ccc09e1c"
+  },
+  {
+    "name": "login___es",
+    "path": "/es/login",
+    "component": "C:\\\\Users\\\\Orlando\\\\WebstormProjects\\\\syp\\\\pages\\\\login.vue",
+    "chunkName": "pages/login",
+    "_name": "_ccc09e1c"
+  },
+  {
+    "name": "aboutus___es",
+    "path": "/es/quienes-somos",
+    "component": "C:\\\\Users\\\\Orlando\\\\WebstormProjects\\\\syp\\\\pages\\\\aboutus\\\\index.vue",
+    "chunkName": "pages/aboutus/index",
+    "_name": "_14851264"
+  }
+]
