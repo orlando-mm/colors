@@ -36,14 +36,7 @@
     </v-row>
     <v-row class="mt-0" justify="center">
       <v-col cols="12" lg="4" xl="3">
-        <v-btn
-          dark
-          depressed
-          block
-          color="primary"
-          :loading="loading"
-          @click="registerUser"
-        >
+        <v-btn dark depressed block color="primary" :loading="loading" @click="registerUser">
           <span class="app-body--1-bold">{{ $t('register.register') }}</span>
         </v-btn>
       </v-col>
@@ -80,15 +73,15 @@
 </template>
 
 <script>
-import FormMixin from '~/mixins/form'
-import AuthMixin from '~/mixins/auth'
+import FormMixin from '~/mixins/form';
+import AuthMixin from '~/mixins/auth';
 export default {
   name: 'RegisterIndex',
   mixins: [FormMixin, AuthMixin],
   data: () => ({
-    showPassw: false,
-  }),
-}
+    showPassw: false
+  })
+};
 </script>
 
 <style scoped></style>

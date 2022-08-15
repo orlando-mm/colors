@@ -9,5 +9,5 @@ export default {
   //  validaciones
   emailValidation: 'Email no válido',
   required: 'Requerido',
-  passwordShort: 'Mínimo 8 caracteres',
-}
+  passwordShort: 'Mínimo 8 caracteres'
+};

@@ -9,9 +9,9 @@
 export default {
   name: 'AuthenticateIndex',
   data: () => ({
-    login: true,
-  }),
-}
+    login: true
+  })
+};
 </script>
 
 <style scoped></style>

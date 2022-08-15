@@ -1,6 +1,6 @@
-import Pages from './lang/pages/index'
-import Locales from './constants/locales'
-//import colors from 'vuetify/es5/util/colors'
+import Pages from './lang/pages/index';
+import Locales from './constants/locales';
+// import colors from 'vuetify/es5/util/colors'
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -14,20 +14,16 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' },
+      { name: 'format-detection', content: 'telephone=no' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/icon.png' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/icon.png' }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~/assets/style.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    { src: '~/plugins/i18n.js' },
-    { src: '~/plugins/utils.js' },
-    { src: '~/plugins/api.js' },
-  ],
+  plugins: [{ src: '~/plugins/i18n.js' }, { src: '~/plugins/utils.js' }, { src: '~/plugins/api.js' }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -37,35 +33,29 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
+    '@nuxtjs/vuetify'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    '@nuxtjs/i18n',
-    '@nuxtjs/proxy',
-    '@nuxtjs/auth-next',
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa',
-  ],
+  modules: ['@nuxtjs/i18n', '@nuxtjs/proxy', '@nuxtjs/auth-next', '@nuxtjs/axios', '@nuxtjs/pwa'],
   proxy: {
-    '/api': 'https://atomikbtc.herokuapp.com',
+    '/api': 'https://atomikbtc.herokuapp.com'
   },
   auth: {
     plugins: ['~/plugins/auth.js'],
     strategies: {
       local: {
         token: {
-          property: 'accessToken',
+          property: 'accessToken'
         },
         user: {
           property: false,
-          autoFetch: false,
+          autoFetch: false
         },
         endpoints: {
           login: {
             url: '/api/v1/auth/signin/',
-            method: 'post',
+            method: 'post'
           },
           /* refresh: {
             url: '/api/v1/auth/refreshtoken/',
@@ -73,14 +63,14 @@ export default {
           }, */
           logout: {
             url: '/api/v1/auth/logout/',
-            method: 'post',
+            method: 'post'
           },
           user: {
             url: '/api/v1/user/',
-            method: 'get',
-          },
-        },
-      },
+            method: 'get'
+          }
+        }
+      }
     },
     localStorage: false,
     cookie: true,
@@ -88,23 +78,23 @@ export default {
       login: '/login',
       logout: '/login',
       callback: '/login',
-      home: '/index',
-    },
+      home: '/index'
+    }
   },
   router: {
-    middleware: ['auth'],
+    middleware: ['auth']
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    proxy: true, // Can be also an object with default options
+    proxy: true // Can be also an object with default options
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'es',
-    },
+      lang: 'es'
+    }
   },
   /*
   moment: {
@@ -123,37 +113,37 @@ export default {
     strategy: 'prefix',
     detectBrowserLanguage: false,
     baseUrl: 'https://www.syp.com',
-    pages: Pages,
+    pages: Pages
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     treeShake: true,
-    optionsPath: '~/plugins/vuetify.options.js',
+    optionsPath: '~/plugins/vuetify.options.js'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     loaders: {
       sass: {
-        implementation: require('sass'),
+        implementation: require('sass')
       },
       scss: {
-        implementation: require('sass'),
-      },
-    },
+        implementation: require('sass')
+      }
+    }
   },
   // Progress Bar and Initial loading
 
   loading: {
     color: 'blue',
-    height: '5px',
+    height: '5px'
   },
 
   loadingIndicator: {
     name: 'fading-circle',
     color: '#48adf0',
-    background: 'white',
-  },
-}
+    background: 'white'
+  }
+};

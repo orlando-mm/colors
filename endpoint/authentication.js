@@ -1,4 +1,4 @@
-const sufi = '/api/v1/auth'
+const sufi = '/api/v1/auth';
 export default {
-  register: `${sufi}/signup/`,
-}
+  register: `${sufi}/signup/`
+};

@@ -1,3 +1,3 @@
 export default {
-  test: 'Esto es una prueba en español',
-}
+  test: 'Esto es una prueba en español'
+};

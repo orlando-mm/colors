@@ -12,8 +12,8 @@
 
 <script>
 export default {
-  name: 'EasyLayout',
-}
+  name: 'EasyLayout'
+};
 </script>
 
 <style scoped></style>

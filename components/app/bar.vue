@@ -4,11 +4,7 @@
       <v-icon color="secondary">{{ $icons.menu }}</v-icon>
     </v-btn>
     <div>
-      <v-img
-        width="180"
-        :src="$assets.atomikLogoText"
-        style="cursor: pointer"
-      />
+      <v-img width="180" :src="$assets.atomikLogoText" style="cursor: pointer" />
     </div>
     <v-spacer></v-spacer>
     <v-btn icon color="secondary">
@@ -17,7 +13,7 @@
     <v-btn v-if="isLoggedIn" icon color="secondary">
       <v-icon color="secondary">{{ $icons.account }}</v-icon>
     </v-btn>
-    <v-btn v-if="!isLoggedIn" icon color="primary" :to="localePath('login')" >
+    <v-btn v-if="!isLoggedIn" icon color="primary" :to="localePath('login')">
       <v-icon color="primary">{{ $icons.login }}</v-icon>
     </v-btn>
     <v-btn v-else icon color="error" :loading="loading" @click="logoutUser">
@@ -30,12 +26,12 @@
 </template>
 
 <script>
-import CommonMixin from '~/mixins/common'
-import AuthMixin from '~/mixins/auth'
+import CommonMixin from '~/mixins/common';
+import AuthMixin from '~/mixins/auth';
 export default {
   name: 'AppBar',
-  mixins: [CommonMixin, AuthMixin],
-}
+  mixins: [CommonMixin, AuthMixin]
+};
 </script>
 
 <style scoped></style>

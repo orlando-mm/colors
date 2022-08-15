@@ -11,8 +11,8 @@
 
 <script>
 export default {
-  name: 'AppTabs',
-}
+  name: 'AppTabs'
+};
 </script>
 
 <style lang="scss">

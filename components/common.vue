@@ -4,8 +4,8 @@
 
 <script>
 export default {
-  name: 'CommonComponents',
-}
+  name: 'CommonComponents'
+};
 </script>
 
 <style scoped></style>

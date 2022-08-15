@@ -3,6 +3,6 @@ const icons = {
   login: 'mdi-login',
   logout: 'mdi-logout',
   lang: 'mdi-web',
-  menu: 'mdi-menu',
-}
-export default icons
+  menu: 'mdi-menu'
+};
+export default icons;

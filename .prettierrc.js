@@ -41,5 +41,5 @@ module.exports = {
   /**
    * Automatic endOfLine
    */
-  endOfLine:"auto"
+  endOfLine: 'auto'
 };

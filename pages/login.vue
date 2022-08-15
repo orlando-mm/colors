@@ -8,8 +8,8 @@
 export default {
   name: 'LoginPage',
   layout: 'easy',
-  auth: false,
-}
+  auth: false
+};
 </script>
 
 <style scoped></style>

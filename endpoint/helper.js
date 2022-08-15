@@ -6,7 +6,7 @@ const buildQueryString = (params) => {
         .filter((key) => params[key] !== null && params[key] !== '')
         .map((key) => `${key}=${params[key]}`)
         .join('&')
-    )
-  else return ''
-}
-export default { buildQueryString }
+    );
+  else return '';
+};
+export default { buildQueryString };

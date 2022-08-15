@@ -1,21 +1,21 @@
-//import Icons from '~/constants/icons'
+// import Icons from '~/constants/icons'
 export default {
   theme: {
     options: {
-      customProperties: true,
+      customProperties: true
     },
     dark: false,
     themes: {
       dark: {
         primary: {
-          base: '#48adf0',
+          base: '#48adf0'
         },
         blue: {
-          lighten1: '#ebf3f8',
+          lighten1: '#ebf3f8'
         },
         white: {
-          base: '#ffffff',
-        },
+          base: '#ffffff'
+        }
       },
       light: {
         primary: '#2196F3',
@@ -23,7 +23,7 @@ export default {
         orange: '#FF9800',
         warning: '#ef972f',
         error: '#eb5848',
-        success: '#3aaa35',
+        success: '#3aaa35'
         /*
         whatsapp: '#25D366',
         facebook: '#4267B2',
@@ -31,12 +31,12 @@ export default {
         twitter: '#1DA1F2',
         telegram: '#0088cc',
         */
-      },
-    },
-  },
+      }
+    }
+  }
   /*
   icons: {
     values: Icons,
   },
   */
-}
+};

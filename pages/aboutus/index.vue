@@ -5,8 +5,8 @@
 <script>
 export default {
   name: 'AboutUsPage',
-  auth: true,
-}
+  auth: true
+};
 </script>
 
 <style scoped></style>

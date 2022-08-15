@@ -1,8 +1,8 @@
 const Aboutus = {
   'aboutus/index': {
     en: '/about-us',
-    es: '/quienes-somos',
-  },
-}
+    es: '/quienes-somos'
+  }
+};
 
-export default Aboutus
+export default Aboutus;
