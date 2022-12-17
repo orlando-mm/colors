@@ -10,7 +10,7 @@
         </h3>
       </v-col>
     </v-row>
-    <h3 class="app-heading">Estado del usuario:{{ user }}</h3>
+    <h3 class="app-heading">Usuario:{{ user }}</h3>
     <!--<h3 class="app-heading--1">Prueba de texto</h3>
     <h3 class="app-caption">Prueba de texto</h3> -->
   </v-container>
