@@ -1,5 +1,8 @@
 # colors
 
+## node version
+### v14.17.6
+
 ## Build Setup
 
 ```bash
