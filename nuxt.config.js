@@ -112,7 +112,7 @@ export default {
     defaultLocale: 'es',
     strategy: 'prefix',
     detectBrowserLanguage: false,
-    baseUrl: 'https://www.syp.com',
+    baseUrl: 'https://www.colors.com',
     pages: Pages
   },
 

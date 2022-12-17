@@ -6,8 +6,7 @@
           <v-img width="80" :src="$assets.atomikLogo" style="cursor: pointer" />
         </div>
         <h3 class="secondary--text mt-5">
-          Lotería de crypto monedas
-          <b class="orange--text">¡ Prueba tu suerte !</b>
+         Colors
         </h3>
       </v-col>
     </v-row>

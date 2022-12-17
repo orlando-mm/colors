@@ -1,17 +1,16 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import { normalizeURL, decode } from 'ufo';
-import { interopDefault } from './utils';
-import scrollBehavior from './router.scrollBehavior.js';
+import Vue from 'vue'
+import Router from 'vue-router'
+import { normalizeURL, decode } from 'ufo'
+import { interopDefault } from './utils'
+import scrollBehavior from './router.scrollBehavior.js'
 
-const _600fe44a = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */));
-const _14851264 = () =>
-  interopDefault(import('..\\pages\\aboutus\\index.vue' /* webpackChunkName: "pages/aboutus/index" */));
-const _ccc09e1c = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login" */));
+const _4cc4cbd2 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _3d54c1ae = () => interopDefault(import('../pages/aboutus/index.vue' /* webpackChunkName: "pages/aboutus/index" */))
+const _166c6ee9 = () => interopDefault(import('../pages/login.vue' /* webpackChunkName: "pages/login" */))
 
-const emptyFn = () => {};
+const emptyFn = () => {}
 
-Vue.use(Router);
+Vue.use(Router)
 
 export const routerOptions = {
   mode: 'history',
@@ -20,59 +19,52 @@ export const routerOptions = {
   linkExactActiveClass: 'nuxt-link-exact-active',
   scrollBehavior,
 
-  routes: [
-    {
-      path: '/en',
-      component: _600fe44a,
-      name: 'index___en'
-    },
-    {
-      path: '/es',
-      component: _600fe44a,
-      name: 'index___es'
-    },
-    {
-      path: '/en/about-us',
-      component: _14851264,
-      name: 'aboutus___en'
-    },
-    {
-      path: '/en/login',
-      component: _ccc09e1c,
-      name: 'login___en'
-    },
-    {
-      path: '/es/login',
-      component: _ccc09e1c,
-      name: 'login___es'
-    },
-    {
-      path: '/es/quienes-somos',
-      component: _14851264,
-      name: 'aboutus___es'
-    }
-  ],
+  routes: [{
+    path: "/en",
+    component: _4cc4cbd2,
+    name: "index___en"
+  }, {
+    path: "/es",
+    component: _4cc4cbd2,
+    name: "index___es"
+  }, {
+    path: "/en/about-us",
+    component: _3d54c1ae,
+    name: "aboutus___en"
+  }, {
+    path: "/en/login",
+    component: _166c6ee9,
+    name: "login___en"
+  }, {
+    path: "/es/login",
+    component: _166c6ee9,
+    name: "login___es"
+  }, {
+    path: "/es/quienes-somos",
+    component: _3d54c1ae,
+    name: "aboutus___es"
+  }],
 
   fallback: false
-};
+}
 
-export function createRouter(ssrContext, config) {
-  const base = (config._app && config._app.basePath) || routerOptions.base;
-  const router = new Router({ ...routerOptions, base });
+export function createRouter (ssrContext, config) {
+  const base = (config._app && config._app.basePath) || routerOptions.base
+  const router = new Router({ ...routerOptions, base  })
 
   // TODO: remove in Nuxt 3
-  const originalPush = router.push;
-  router.push = function push(location, onComplete = emptyFn, onAbort) {
-    return originalPush.call(this, location, onComplete, onAbort);
-  };
+  const originalPush = router.push
+  router.push = function push (location, onComplete = emptyFn, onAbort) {
+    return originalPush.call(this, location, onComplete, onAbort)
+  }
 
-  const resolve = router.resolve.bind(router);
+  const resolve = router.resolve.bind(router)
   router.resolve = (to, current, append) => {
     if (typeof to === 'string') {
-      to = normalizeURL(to);
+      to = normalizeURL(to)
     }
-    return resolve(to, current, append);
-  };
+    return resolve(to, current, append)
+  }
 
-  return router;
+  return router
 }

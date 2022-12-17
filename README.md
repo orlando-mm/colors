@@ -1,4 +1,4 @@
-# syp
+# colors
 
 ## Build Setup
 
