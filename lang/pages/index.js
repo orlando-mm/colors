@@ -1,7 +1,7 @@
 import login from './login';
-import aboutus from './aboutus';
+import list from './list';
 
 export default {
   ...login,
-  ...aboutus
+  ...list
 };

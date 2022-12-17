@@ -1,10 +1,7 @@
 <template>
   <v-app-bar app dense>
-    <v-btn icon>
-      <v-icon color="secondary">{{ $icons.menu }}</v-icon>
-    </v-btn>
     <div>
-      <v-img width="180" :src="$assets.atomikLogoText" style="cursor: pointer" />
+      <app-logo />
     </div>
     <v-spacer></v-spacer>
     <v-btn icon color="secondary">

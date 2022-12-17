@@ -1,9 +1,7 @@
 <template>
-  <v-row>
-    <v-col align="center">
-      <v-img width="50" :src="$assets.atomikLogo" style="cursor: pointer" @click="goHome" />
-    </v-col>
-  </v-row>
+  <h1 style="cursor: pointer" @click="goHome">
+    <b class="red--text">Co<b class="green--text">lo</b><b class="primary--text">rs</b></b>
+  </h1>
 </template>
 
 <script>

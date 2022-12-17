@@ -2,7 +2,11 @@
   <v-app>
     <v-main>
       <v-container fluid>
-        <app-logo class="mt-5" />
+        <v-row class="mt-5" justify="center">
+          <v-col cols="auto">
+            <app-logo />
+          </v-col>
+        </v-row>
         <Nuxt />
       </v-container>
     </v-main>

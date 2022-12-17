@@ -1,6 +1,6 @@
 <template>
   <v-footer app>
-    <span>&copy; Crypto Lottery</span>
+    <span>&copy; Colors</span>
   </v-footer>
 </template>
 

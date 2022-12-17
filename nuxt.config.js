@@ -8,15 +8,15 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s | Crypto Lottery',
-    title: 'ATOMIK',
+    titleTemplate: '%s | Colors',
+    title: 'COLORS',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/icon.png' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/rgb.png' }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -109,7 +109,7 @@ export default {
     parsePages: false,
     langDir: 'lang/',
     locales: Locales,
-    defaultLocale: 'es',
+    defaultLocale: 'pt',
     strategy: 'prefix',
     detectBrowserLanguage: false,
     baseUrl: 'https://www.colors.com',

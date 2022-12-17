@@ -10,14 +10,14 @@ const Locales = [
     name: 'Español',
     iso: 'es-ES',
     file: 'es.js'
-  }
-  /* {
-    code: 'fr',
-    name: 'Français',
-    iso: 'fr-FRA',
-    file: 'fr.js',
   },
   {
+    code: 'pt',
+    name: 'Portugues',
+    iso: 'pt-BR',
+    file: 'pt.js'
+  }
+  /* {
     code: 'de',
     name: 'Deutsche',
     iso: 'de-DE',

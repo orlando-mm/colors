@@ -1,5 +1,4 @@
 const Assets = {
-  atomikLogoText: require('~/assets/images/atomikLogoText.svg'),
-  atomikLogo: require('~/assets/images/atomikLogo.svg')
+  colorsBall: require('~/assets/images/rgb.png')
 };
 export default Assets;

@@ -2,15 +2,11 @@
   <v-container>
     <v-row>
       <v-col align="center">
-        <div>
-          <v-img width="80" :src="$assets.atomikLogo" style="cursor: pointer" />
-        </div>
-        <h3 class="secondary--text mt-5">
-         Colors
-        </h3>
+        <h1>{{$t('home.welcomeTo')}}</h1>
+        <app-logo />
       </v-col>
     </v-row>
-    <h3 class="app-heading">Usuario:{{ user }}</h3>
+    <!--<h3 class="app-heading">Usuario:{{ user }}</h3>-->
     <!--<h3 class="app-heading--1">Prueba de texto</h3>
     <h3 class="app-caption">Prueba de texto</h3> -->
   </v-container>

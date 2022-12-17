@@ -1,7 +1,7 @@
 <template>
   <div>
     <authenticate-login v-if="login" @changeform="login = !login" />
-    <authenticate-register v-else @changeform="login = !login" />
+
   </div>
 </template>
 

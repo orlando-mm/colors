@@ -1,9 +1,10 @@
 import home from './partials/home';
 import login from './partials/login';
-import register from './partials/register';
+import list from './partials/list';
 
 export default {
   home: home.es,
   login: login.es,
-  register: register.es
+  list: list.es
+
 };

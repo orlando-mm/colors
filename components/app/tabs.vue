@@ -2,10 +2,7 @@
   <v-tabs centered center-active color="primary">
     <v-tabs-slider color="secondary"></v-tabs-slider>
     <v-tab :to="localePath('index')"><span>Home</span></v-tab>
-    <v-tab :to="localePath('index')"><span>Ganadores</span></v-tab>
-    <v-tab :to="localePath('index')"><span>¿Cómo jugar?</span></v-tab>
-    <v-tab :to="localePath('aboutus')"><span>¿Quiénes somos?</span></v-tab>
-    <v-tab :to="localePath('index')"><span>Contacto</span></v-tab>
+    <v-tab :to="localePath('list')"><span>{{$t('list.colorList')}}</span></v-tab>
   </v-tabs>
 </template>
 

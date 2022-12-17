@@ -5,7 +5,7 @@ import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
 const _4cc4cbd2 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
-const _3d54c1ae = () => interopDefault(import('../pages/aboutus/index.vue' /* webpackChunkName: "pages/aboutus/index" */))
+const _66303c5e = () => interopDefault(import('../pages/list/index.vue' /* webpackChunkName: "pages/list/index" */))
 const _166c6ee9 = () => interopDefault(import('../pages/login.vue' /* webpackChunkName: "pages/login" */))
 
 const emptyFn = () => {}
@@ -28,21 +28,33 @@ export const routerOptions = {
     component: _4cc4cbd2,
     name: "index___es"
   }, {
-    path: "/en/about-us",
-    component: _3d54c1ae,
-    name: "aboutus___en"
+    path: "/pt",
+    component: _4cc4cbd2,
+    name: "index___pt"
+  }, {
+    path: "/en/list",
+    component: _66303c5e,
+    name: "list___en"
   }, {
     path: "/en/login",
     component: _166c6ee9,
     name: "login___en"
   }, {
+    path: "/es/list",
+    component: _66303c5e,
+    name: "list___es"
+  }, {
     path: "/es/login",
     component: _166c6ee9,
     name: "login___es"
   }, {
-    path: "/es/quienes-somos",
-    component: _3d54c1ae,
-    name: "aboutus___es"
+    path: "/pt/list",
+    component: _66303c5e,
+    name: "list___pt"
+  }, {
+    path: "/pt/login",
+    component: _166c6ee9,
+    name: "login___pt"
   }],
 
   fallback: false
