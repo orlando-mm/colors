@@ -25,7 +25,7 @@ export default function (ctx, inject) {
     "namespace": "auth"
   },
   "cookie": true,
-  "localStorage": false,
+  "localStorage": true,
   "defaultStrategy": "local"
 }
 
@@ -36,7 +36,8 @@ export default function (ctx, inject) {
   // local
   $auth.registerStrategy('local', new LocalScheme($auth, {
   "token": {
-    "property": "accessToken"
+    "property": "accessToken",
+    "type": "bearer"
   },
   "user": {
     "property": false,
@@ -44,16 +45,8 @@ export default function (ctx, inject) {
   },
   "endpoints": {
     "login": {
-      "url": "/api/v1/auth/signin/",
+      "url": "https://sys-dev.searchandstay.com/api/admin/login_json",
       "method": "post"
-    },
-    "logout": {
-      "url": "/api/v1/auth/logout/",
-      "method": "post"
-    },
-    "user": {
-      "url": "/api/v1/user/",
-      "method": "get"
     }
   },
   "name": "local"

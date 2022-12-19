@@ -1,10 +1,10 @@
 <template>
-  <div><h1>Quiénes somos</h1></div>
+  <div><h1>Lista</h1></div>
 </template>
 
 <script>
 export default {
-  name: 'AboutUsPage',
+  name: 'ListColors',
   auth: true
 };
 </script>

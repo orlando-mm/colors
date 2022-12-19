@@ -1,5 +1,3 @@
-import { mapActions } from 'vuex';
-
 export default {
   data() {
     return {
@@ -11,38 +9,21 @@ export default {
     };
   },
   methods: {
-    ...mapActions({
-      register: 'authentication/register'
-    }),
-    clearPasswordError() {
-      delete this.errorMessages.password;
-    },
-    clearUsernameError() {
-      this.errorMessages = {};
-    },
     async userLogin() {
       if (this.$refs.form.validate()) {
         try {
           this.loading = true;
           const { email, password } = this;
           const { data } = await this.$auth.loginWith('local', {
-            data: { email, password }
+            data: JSON.stringify({ login: { email, password } })
           });
-          console.log('DATA DEL LOGIN');
-          console.log(data);
-          console.log('estado de loggedIn');
-          console.log(this.$auth.loggedIn);
-          console.log('AUTH luego de login');
-          console.log(this.$auth);
-          console.log('TOKEN STATUS');
-          console.log(this.$auth.strategy.token.status());
-          console.log('AUTH USER');
-          console.log(this.$auth.user);
-          //  await this.$auth.strategy.token.set(data.accessToken)
-          //  await this.$auth.setUser(data.user)
-          console.log('USUARIO LOGUEADO CORRECTAMENTE');
-          await this.$router.push(this.localePath({ name: 'index' }));
+          if (data?.success) {
+            await this.$auth.strategy.token.set(data?.data?.result?.access_token);
+            await this.$auth.setUser(data?.data?.result?.name);
+            await this.$router.push(this.localePath({ name: 'index' }));
+          }
         } catch (e) {
+          // eslint-disable-next-line no-console
           console.error('error en login', e);
           /*  this.errorMessages = (e.response || {}).data
           if (this.errorMessages['non_field_errors']) {
@@ -55,42 +36,16 @@ export default {
         this.loading = false;
       }
     },
-    async registerUser() {
-      if (this.$refs.form.validate()) {
-        try {
-          this.loading = true;
-          const user = {
-            email: this.email,
-            password: this.password
-          };
-          const data = await this.register(user);
-          console.log('DATA DEL REGISTER');
-          console.log(data);
-          if (!data.error) {
-            console.log('USUARIO REGISTRADO CORRECTAMENTE, REVISE SU EMAIL');
-            this.email = '';
-            this.password = '';
-            this.errorMessages = {};
-            this.clearPasswordError();
-            this.clearUsernameError();
-            this.loading = false;
-          } else {
-            this.errorMessages = data.object;
-            this.loading = false;
-          }
-        } catch (e) {
-          console.error('error register', e);
-        }
-      }
-    },
     async logoutUser() {
       this.loading = true;
       try {
         await this.$auth.logout();
+        // eslint-disable-next-line no-console
         console.log('SE HA CERRADO SESION CORRECTAMENTE');
         window.localStorage.clear();
         await this.$router.push(this.localePath('/'));
       } catch (e) {
+        // eslint-disable-next-line no-console
         console.log('error logout ', e);
       }
       this.loading = false;

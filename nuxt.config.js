@@ -39,14 +39,15 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/i18n', '@nuxtjs/proxy', '@nuxtjs/auth-next', '@nuxtjs/axios', '@nuxtjs/pwa'],
   proxy: {
-    '/api': 'https://atomikbtc.herokuapp.com'
+    '/api': 'https://sys-dev.searchandstay.com'
   },
   auth: {
     plugins: ['~/plugins/auth.js'],
     strategies: {
       local: {
         token: {
-          property: 'accessToken'
+          property: 'accessToken',
+          type: 'bearer'
         },
         user: {
           property: false,
@@ -54,25 +55,21 @@ export default {
         },
         endpoints: {
           login: {
-            url: '/api/v1/auth/signin/',
+            url: 'https://sys-dev.searchandstay.com/api/admin/login_json',
             method: 'post'
-          },
-          /* refresh: {
-            url: '/api/v1/auth/refreshtoken/',
-            method: 'post',
-          }, */
-          logout: {
+          }
+          /* logout: {
             url: '/api/v1/auth/logout/',
             method: 'post'
-          },
-          user: {
+          }
+           user: {
             url: '/api/v1/user/',
             method: 'get'
-          }
+          } */
         }
       }
     },
-    localStorage: false,
+    localStorage: true,
     cookie: true,
     redirect: {
       login: '/login',
@@ -143,7 +140,7 @@ export default {
 
   loadingIndicator: {
     name: 'fading-circle',
-    color: '#48adf0',
+    color: '#2196F3',
     background: 'white'
   }
 };

@@ -2,13 +2,18 @@
   <v-container>
     <v-row>
       <v-col align="center">
-        <h1>{{$t('home.welcomeTo')}}</h1>
+        <h3 class="primary--text mt-5 app-heading--5-bold">{{ user.user || '' }}</h3>
+        <h1>{{ $t('home.welcomeTo') }}</h1>
         <app-logo />
+
       </v-col>
     </v-row>
-    <!--<h3 class="app-heading">Usuario:{{ user }}</h3>-->
-    <!--<h3 class="app-heading--1">Prueba de texto</h3>
-    <h3 class="app-caption">Prueba de texto</h3> -->
+    <div class="mt-10">
+      <h1 class="primary--text">{{ user }}</h1>
+    </div>
+    <div class="mt-10">
+      <h1 class="primary--text">{{ test }}</h1>
+    </div>
   </v-container>
 </template>
 
@@ -19,6 +24,9 @@ export default {
   computed: {
     user() {
       return this.$auth.$state;
+    },
+    test() {
+      return this.$auth.token
     }
   }
 };
