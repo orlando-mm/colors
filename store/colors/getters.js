@@ -1,1 +1,5 @@
-export default {};
+export default {
+  listColors: (state) => {
+    return state.listColors
+  },
+};

@@ -5,15 +5,18 @@ export default {
   async listColors({ commit }) {
     try {
       const data = await this.$api.get(colors.list);
-      if (data) {
-        // eslint-disable-next-line no-console
-        console.log(data)
-        // commit('SET_COLLECTIONS', data.data);
+      if (data?.data?.data?.entities.length) {
+        commit('SET_LIST_COLORS', data.data.data.entities);
       }
+      if (data?.data?.pagination) {
+        commit('SET_PAGINATION', data?.data?.data?.pagination);
+      }
+      return { success: true, data };
     } catch (e) {
       // eslint-disable-next-line no-console
       console.error('colors list action', e);
       if (e.statusCode === 404) throw e;
+      return { success: false, data: e };
     }
-  },
+  }
 };
