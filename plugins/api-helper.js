@@ -1,8 +1,8 @@
-import authentication from '../endpoint/authentication';
-const axios = require('axios');
+// import authentication from '../endpoint/authentication';
+// const axios = require('axios');
 
 export default {
-  refreshToken: async (refresh) => {
+  /* refreshToken: async (refresh) => {
     try {
       const { data } = await axios.post(authentication.token.create, {
         refresh
@@ -11,7 +11,7 @@ export default {
     } catch (e) {
       return false;
     }
-  },
+  }, */
   onError({ response }) {
     let result = response.data;
     const constant = 'Un error ha ocurrido y su petición no ha podido ser completada. ';

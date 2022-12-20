@@ -1,6 +1,5 @@
 import Pages from './lang/pages/index';
 import Locales from './constants/locales';
-// import colors from 'vuetify/es5/util/colors'
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -16,7 +15,7 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/rgb.png' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/icon.png' }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -42,49 +41,38 @@ export default {
     '/api': 'https://sys-dev.searchandstay.com'
   },
   auth: {
-    plugins: ['~/plugins/auth.js'],
     strategies: {
       local: {
         token: {
-          property: 'accessToken',
-          type: 'bearer'
+          property: 'access_token',
+          global: true
         },
         user: {
-          property: false,
-          autoFetch: false
+          property: false
         },
         endpoints: {
-          login: {
-            url: 'https://sys-dev.searchandstay.com/api/admin/login_json',
-            method: 'post'
-          }
-          /* logout: {
-            url: '/api/v1/auth/logout/',
-            method: 'post'
-          }
-           user: {
-            url: '/api/v1/user/',
-            method: 'get'
-          } */
+          login: { url: '/api/admin/login_json', method: 'post' },
+          logout: false,
+          user: false
         }
       }
     },
-    localStorage: true,
-    cookie: true,
     redirect: {
       login: '/login',
       logout: '/login',
       callback: '/login',
-      home: '/index'
+      home: '/list'
     }
   },
   router: {
-    middleware: ['auth']
+    middleware: ['auth'],
+    trailingSlash: true
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    proxy: true // Can be also an object with default options
+    // proxy: true, // Can be also an object with default options,
+    baseURL: 'https://sys-dev.searchandstay.com' || '/'
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -93,12 +81,6 @@ export default {
       lang: 'es'
     }
   },
-  /*
-  moment: {
-    defaultLocale: 'es',
-    locales: ['es', 'de', 'en-in', 'fr', 'ru'],
-  },
-  */
 
   i18n: {
     lazy: true,

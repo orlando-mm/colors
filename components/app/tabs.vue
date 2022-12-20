@@ -2,13 +2,15 @@
   <v-tabs centered center-active color="primary">
     <v-tabs-slider color="secondary"></v-tabs-slider>
     <v-tab :to="localePath('index')"><span>Home</span></v-tab>
-    <v-tab :to="localePath('list')"><span>{{$t('list.colorList')}}</span></v-tab>
+    <v-tab v-if="isLoggedIn" :to="localePath('list')"><span>{{$t('list.colorList')}}</span></v-tab>
   </v-tabs>
 </template>
 
 <script>
+import CommonMixin from '~/mixins/common';
 export default {
-  name: 'AppTabs'
+  name: 'AppTabs',
+  mixins: [CommonMixin]
 };
 </script>
 

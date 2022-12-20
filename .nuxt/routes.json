@@ -1,65 +1,83 @@
 [
   {
     "name": "index___en",
-    "path": "/en",
+    "path": "/en/",
     "component": "/Users/orlando/WebstormProjects/colors/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_4cc4cbd2"
+    "pathToRegexpOptions": {
+      "strict": true
+    }
   },
   {
     "name": "index___es",
-    "path": "/es",
+    "path": "/es/",
     "component": "/Users/orlando/WebstormProjects/colors/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_4cc4cbd2"
+    "pathToRegexpOptions": {
+      "strict": true
+    }
   },
   {
     "name": "index___pt",
-    "path": "/pt",
+    "path": "/pt/",
     "component": "/Users/orlando/WebstormProjects/colors/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_4cc4cbd2"
+    "pathToRegexpOptions": {
+      "strict": true
+    }
   },
   {
     "name": "list___en",
-    "path": "/en/list",
+    "path": "/en/list/",
     "component": "/Users/orlando/WebstormProjects/colors/pages/list/index.vue",
     "chunkName": "pages/list/index",
-    "_name": "_66303c5e"
+    "pathToRegexpOptions": {
+      "strict": true
+    }
   },
   {
     "name": "login___en",
-    "path": "/en/login",
+    "path": "/en/login/",
     "component": "/Users/orlando/WebstormProjects/colors/pages/login.vue",
     "chunkName": "pages/login",
-    "_name": "_166c6ee9"
+    "pathToRegexpOptions": {
+      "strict": true
+    }
   },
   {
     "name": "list___es",
-    "path": "/es/list",
+    "path": "/es/list/",
     "component": "/Users/orlando/WebstormProjects/colors/pages/list/index.vue",
     "chunkName": "pages/list/index",
-    "_name": "_66303c5e"
+    "pathToRegexpOptions": {
+      "strict": true
+    }
   },
   {
     "name": "login___es",
-    "path": "/es/login",
+    "path": "/es/login/",
     "component": "/Users/orlando/WebstormProjects/colors/pages/login.vue",
     "chunkName": "pages/login",
-    "_name": "_166c6ee9"
+    "pathToRegexpOptions": {
+      "strict": true
+    }
   },
   {
     "name": "list___pt",
-    "path": "/pt/list",
+    "path": "/pt/list/",
     "component": "/Users/orlando/WebstormProjects/colors/pages/list/index.vue",
     "chunkName": "pages/list/index",
-    "_name": "_66303c5e"
+    "pathToRegexpOptions": {
+      "strict": true
+    }
   },
   {
     "name": "login___pt",
-    "path": "/pt/login",
+    "path": "/pt/login/",
     "component": "/Users/orlando/WebstormProjects/colors/pages/login.vue",
     "chunkName": "pages/login",
-    "_name": "_166c6ee9"
+    "pathToRegexpOptions": {
+      "strict": true
+    }
   }
 ]

@@ -18,14 +18,21 @@ export default function (ctx, inject) {
   "redirect": {
     "login": "/login",
     "logout": "/login",
-    "home": "/index",
+    "home": "/list",
     "callback": "/login"
   },
   "vuex": {
     "namespace": "auth"
   },
-  "cookie": true,
-  "localStorage": true,
+  "cookie": {
+    "prefix": "auth.",
+    "options": {
+      "path": "/"
+    }
+  },
+  "localStorage": {
+    "prefix": "auth."
+  },
   "defaultStrategy": "local"
 }
 
@@ -36,18 +43,19 @@ export default function (ctx, inject) {
   // local
   $auth.registerStrategy('local', new LocalScheme($auth, {
   "token": {
-    "property": "accessToken",
-    "type": "bearer"
+    "property": "access_token",
+    "global": true
   },
   "user": {
-    "property": false,
-    "autoFetch": false
+    "property": false
   },
   "endpoints": {
     "login": {
-      "url": "https://sys-dev.searchandstay.com/api/admin/login_json",
+      "url": "/api/admin/login_json",
       "method": "post"
-    }
+    },
+    "logout": false,
+    "user": false
   },
   "name": "local"
 }))

@@ -17,6 +17,7 @@ import nuxt_plugin_plugin_dae76d14 from 'nuxt_plugin_plugin_dae76d14' // Source:
 import nuxt_plugin_plugin_261e5e38 from 'nuxt_plugin_plugin_261e5e38' // Source: ./vuetify/plugin.js (mode: 'all')
 import nuxt_plugin_workbox_f81c90b0 from 'nuxt_plugin_workbox_f81c90b0' // Source: ./workbox.js (mode: 'client')
 import nuxt_plugin_metaplugin_06e6528a from 'nuxt_plugin_metaplugin_06e6528a' // Source: ./pwa/meta.plugin.js (mode: 'all')
+import nuxt_plugin_iconplugin_01347c2f from 'nuxt_plugin_iconplugin_01347c2f' // Source: ./pwa/icon.plugin.js (mode: 'all')
 import nuxt_plugin_axios_0b2f14e8 from 'nuxt_plugin_axios_0b2f14e8' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_pluginutils_fb037ba2 from 'nuxt_plugin_pluginutils_fb037ba2' // Source: ./nuxt-i18n/plugin.utils.js (mode: 'all')
 import nuxt_plugin_pluginrouting_dc12008c from 'nuxt_plugin_pluginrouting_dc12008c' // Source: ./nuxt-i18n/plugin.routing.js (mode: 'all')
@@ -25,7 +26,6 @@ import nuxt_plugin_i18n_1fba523a from 'nuxt_plugin_i18n_1fba523a' // Source: ../
 import nuxt_plugin_utils_1ea7651c from 'nuxt_plugin_utils_1ea7651c' // Source: ../plugins/utils.js (mode: 'all')
 import nuxt_plugin_api_785206da from 'nuxt_plugin_api_785206da' // Source: ../plugins/api.js (mode: 'all')
 import nuxt_plugin_auth_14105224 from 'nuxt_plugin_auth_14105224' // Source: ./auth.js (mode: 'all')
-import nuxt_plugin_auth_7f7561ce from 'nuxt_plugin_auth_7f7561ce' // Source: ../plugins/auth.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -90,7 +90,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"titleTemplate":"%s | Colors","title":"COLORS","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Frgb.png"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"style":[],"script":[]},
+    head: {"titleTemplate":"%s | Colors","title":"COLORS","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ficon.png"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Roboto:100,300,400,500,700,900&display=swap"},{"rel":"stylesheet","type":"text\u002Fcss","href":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002F@mdi\u002Ffont@latest\u002Fcss\u002Fmaterialdesignicons.min.css"}],"style":[],"script":[]},
 
     store,
     router,
@@ -235,6 +235,10 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_metaplugin_06e6528a(app.context, inject)
   }
 
+  if (typeof nuxt_plugin_iconplugin_01347c2f === 'function') {
+    await nuxt_plugin_iconplugin_01347c2f(app.context, inject)
+  }
+
   if (typeof nuxt_plugin_axios_0b2f14e8 === 'function') {
     await nuxt_plugin_axios_0b2f14e8(app.context, inject)
   }
@@ -265,10 +269,6 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_auth_14105224 === 'function') {
     await nuxt_plugin_auth_14105224(app.context, inject)
-  }
-
-  if (typeof nuxt_plugin_auth_7f7561ce === 'function') {
-    await nuxt_plugin_auth_7f7561ce(app.context, inject)
   }
 
   // Lock enablePreview in context

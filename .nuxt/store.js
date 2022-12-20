@@ -17,20 +17,20 @@ let store = {};
   // Enforce store modules
   store.modules = store.modules || {}
 
-  resolveStoreModules(require('../store/authentication/actions.js'), 'authentication/actions.js')
-  resolveStoreModules(require('../store/authentication/getters.js'), 'authentication/getters.js')
-  resolveStoreModules(require('../store/authentication/mutations.js'), 'authentication/mutations.js')
-  resolveStoreModules(require('../store/authentication/state.js'), 'authentication/state.js')
+  resolveStoreModules(require('../store/colors/actions.js'), 'colors/actions.js')
+  resolveStoreModules(require('../store/colors/getters.js'), 'colors/getters.js')
+  resolveStoreModules(require('../store/colors/mutations.js'), 'colors/mutations.js')
+  resolveStoreModules(require('../store/colors/state.js'), 'colors/state.js')
 
   // If the environment supports hot reloading...
 
   if (process.client && module.hot) {
     // Whenever any Vuex module is updated...
     module.hot.accept([
-      '../store/authentication/actions.js',
-      '../store/authentication/getters.js',
-      '../store/authentication/mutations.js',
-      '../store/authentication/state.js',
+      '../store/colors/actions.js',
+      '../store/colors/getters.js',
+      '../store/colors/mutations.js',
+      '../store/colors/state.js',
     ], () => {
       // Update `root.modules` with the latest definitions.
       updateModules()

@@ -20,40 +20,49 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
-    path: "/en",
+    path: "/en/",
     component: _4cc4cbd2,
+    pathToRegexpOptions: {"strict":true},
     name: "index___en"
   }, {
-    path: "/es",
+    path: "/es/",
     component: _4cc4cbd2,
+    pathToRegexpOptions: {"strict":true},
     name: "index___es"
   }, {
-    path: "/pt",
+    path: "/pt/",
     component: _4cc4cbd2,
+    pathToRegexpOptions: {"strict":true},
     name: "index___pt"
   }, {
-    path: "/en/list",
+    path: "/en/list/",
     component: _66303c5e,
+    pathToRegexpOptions: {"strict":true},
     name: "list___en"
   }, {
-    path: "/en/login",
+    path: "/en/login/",
     component: _166c6ee9,
+    pathToRegexpOptions: {"strict":true},
     name: "login___en"
   }, {
-    path: "/es/list",
+    path: "/es/list/",
     component: _66303c5e,
+    pathToRegexpOptions: {"strict":true},
     name: "list___es"
   }, {
-    path: "/es/login",
+    path: "/es/login/",
     component: _166c6ee9,
+    pathToRegexpOptions: {"strict":true},
     name: "login___es"
   }, {
-    path: "/pt/list",
+    path: "/pt/list/",
     component: _66303c5e,
+    pathToRegexpOptions: {"strict":true},
     name: "list___pt"
   }, {
-    path: "/pt/login",
+    path: "/pt/login/",
     component: _166c6ee9,
+    pathToRegexpOptions: {"strict":true},
     name: "login___pt"
   }],
 

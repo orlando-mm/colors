@@ -1,5 +1,5 @@
-import authentication from './authentication';
+import colors from './colors';
 
 export default {
-  authentication
+  colors
 };

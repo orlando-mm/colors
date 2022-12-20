@@ -1,33 +1,28 @@
 <template>
   <v-container>
-    <v-row>
-      <v-col align="center">
-        <h3 class="primary--text mt-5 app-heading--5-bold">{{ user.user || '' }}</h3>
-        <h1>{{ $t('home.welcomeTo') }}</h1>
-        <app-logo />
-
+    <v-row justify="center" class="mt-10">
+      <v-col cols="auto" class="d-inline-flex">
+        <h1 v-if="!isLoggedIn">{{ $t('home.welcomeTo') }}</h1>
+        <h1 v-else>{{ $t('home.using') }}</h1>
+        <app-logo class="ml-2" />
       </v-col>
     </v-row>
-    <div class="mt-10">
-      <h1 class="primary--text">{{ user }}</h1>
-    </div>
-    <div class="mt-10">
-      <h1 class="primary--text">{{ test }}</h1>
-    </div>
+    <v-row v-if="!isLoggedIn" justify="center" class="mt-10">
+      <v-col cols="auto" class="align-center">
+        <span class="app-heading--6-bold primary--text">{{ $t('home.toViewYour') }}</span>
+        <v-btn dark depressed block color="green" class="mt-5" :to="localePath('login')">
+          <span class="app-body--1-bold">{{ $t('login.signIn') }}</span>
+        </v-btn>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
+import CommonMixin from '~/mixins/common';
 export default {
   name: 'IndexPage',
   auth: false,
-  computed: {
-    user() {
-      return this.$auth.$state;
-    },
-    test() {
-      return this.$auth.token
-    }
-  }
+  mixins: [CommonMixin]
 };
 </script>

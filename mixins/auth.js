@@ -20,7 +20,7 @@ export default {
           if (data?.success) {
             await this.$auth.strategy.token.set(data?.data?.result?.access_token);
             await this.$auth.setUser(data?.data?.result?.name);
-            await this.$router.push(this.localePath({ name: 'index' }));
+            await this.$router.push(this.localePath({ name: 'list' }));
           }
         } catch (e) {
           // eslint-disable-next-line no-console
