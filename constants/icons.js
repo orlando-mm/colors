@@ -6,6 +6,7 @@ const icons = {
   menu: 'mdi-menu',
   check: 'mdi-checkbox-marked-circle',
   pencil: 'mdi-pencil',
-  delete: 'mdi-delete'
+  delete: 'mdi-delete',
+  plus: 'mdi-plus-thick'
 };
 export default icons;

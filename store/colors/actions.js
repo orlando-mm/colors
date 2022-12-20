@@ -2,9 +2,9 @@ import endpoint from '~/endpoint';
 const { colors } = endpoint;
 
 export default {
-  async listColors({ commit }) {
+  async listColors({ commit }, filter) {
     try {
-      const data = await this.$api.get(colors.list);
+      const data = await this.$api.get(colors.list(filter));
       if (data?.data?.data?.entities.length) {
         commit('SET_LIST_COLORS', data.data.data.entities);
       }

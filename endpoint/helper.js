@@ -9,4 +9,7 @@ const buildQueryString = (params) => {
     );
   else return '';
 };
-export default { buildQueryString };
+const buildQueryFilter = (params) => {
+  return params ? `?${params}=true` : '';
+};
+export default { buildQueryString, buildQueryFilter };

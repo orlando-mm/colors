@@ -8,6 +8,7 @@
       :sort-by="['bg_color', 'active']"
       :sort-desc="[false, true]"
       multi-sort
+      hide-default-footer
     >
       <template #top>
         <v-toolbar flat>
@@ -16,7 +17,9 @@
           <v-spacer></v-spacer>
           <v-dialog v-model="dialog" max-width="500px">
             <template #activator="{ on, attrs }">
-              <v-btn color="primary" depressed dark class="mb-2" v-bind="attrs" v-on="on"> Nuevo color </v-btn>
+              <v-btn color="primary" depressed dark small fab class="mb-2" v-bind="attrs" v-on="on">
+                <v-icon>{{ $icons.plus }}</v-icon>
+              </v-btn>
             </template>
             <v-card>
               <v-card-title>
@@ -84,6 +87,7 @@
         <v-btn color="primary" depressed @click="initialize"> Reset </v-btn>
       </template>
     </v-data-table>
+    <app-pagination class="mt-10" />
   </v-container>
 </template>
 
@@ -141,7 +145,7 @@ export default {
     }
   },
   created() {
-    this.initialize()
+    this.initialize();
   },
 
   methods: {
@@ -149,9 +153,9 @@ export default {
       listColorsAction: 'colors/listColors'
     }),
     initialize() {
-      this.loadingList = true
+      this.loadingList = true;
       this.listColorsAction();
-      this.loadingList = false
+      this.loadingList = false;
     },
 
     editItem(item) {
