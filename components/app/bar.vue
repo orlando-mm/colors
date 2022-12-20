@@ -4,9 +4,7 @@
       <app-logo />
     </div>
     <v-spacer></v-spacer>
-    <v-btn icon color="secondary">
-      <v-icon color="secondary">{{ $icons.lang }}</v-icon>
-    </v-btn>
+    <app-lang />
     <v-btn v-if="isLoggedIn" icon color="secondary">
       <v-icon color="secondary">{{ $icons.account }}</v-icon>
     </v-btn>
