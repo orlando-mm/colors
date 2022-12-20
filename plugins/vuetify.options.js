@@ -23,7 +23,10 @@ export default {
         orange: '#FF9800',
         warning: '#ef972f',
         error: '#eb5848',
-        success: '#3aaa35'
+        success: '#3aaa35',
+        cred: '#F44336',
+        cgreen: '#4CAF50'
+
         /*
         whatsapp: '#25D366',
         facebook: '#4267B2',

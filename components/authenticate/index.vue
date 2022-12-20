@@ -1,16 +1,14 @@
 <template>
   <div>
-    <authenticate-login v-if="login" @changeform="login = !login" />
-
+    <authenticate-login />
+    <!-- register -->
+    <!-- reset passwd -->
   </div>
 </template>
 
 <script>
 export default {
-  name: 'AuthenticateIndex',
-  data: () => ({
-    login: true
-  })
+  name: 'AuthenticateIndex'
 };
 </script>
 
