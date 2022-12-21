@@ -1,15 +1,29 @@
 <template>
   <div class="text-center">
-    <v-pagination v-model="page" :length="4" circle :total-visible="5"></v-pagination>
+    <v-pagination
+      :length="numPages"
+      :total-visible="totalVisible"
+      circle
+      v-bind="$attrs"
+      v-on="$listeners"
+    ></v-pagination>
   </div>
 </template>
 
 <script>
 export default {
   name: 'AppPagination',
-  data: () => ({
-    page: 1
-  })
+  props: {
+    numPages: {
+      type: Number,
+      default: 1
+    },
+    totalVisible: {
+      type: Number,
+      default: 4
+    }
+  },
+  data: () => ({})
 };
 </script>
 

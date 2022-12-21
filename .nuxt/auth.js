@@ -18,7 +18,7 @@ export default function (ctx, inject) {
   "redirect": {
     "login": "/login",
     "logout": "/login",
-    "home": "/list",
+    "home": "/index",
     "callback": "/login"
   },
   "vuex": {

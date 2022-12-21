@@ -10,6 +10,13 @@ const buildQueryString = (params) => {
   else return '';
 };
 const buildQueryFilter = (params) => {
-  return params ? `?${params}=true` : '';
+  let query = '?';
+  Object.keys(params).forEach((key) => {
+    if (key !== '' && key !== 'romantic') {
+      query += `${key}=${params[key]}&`;
+    }
+  });
+  query = query == null || query.length === 0 || query === '?' ? null : query.substring(0, query.length - 1);
+  return query || '';
 };
 export default { buildQueryString, buildQueryFilter };

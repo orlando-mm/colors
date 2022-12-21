@@ -8,7 +8,7 @@ export default {
       if (data?.data?.data?.entities.length) {
         commit('SET_LIST_COLORS', data.data.data.entities);
       }
-      if (data?.data?.pagination) {
+      if (data?.data?.data?.pagination) {
         commit('SET_PAGINATION', data?.data?.data?.pagination);
       }
       return { success: true, data };

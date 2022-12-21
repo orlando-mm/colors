@@ -61,7 +61,7 @@ export default {
       login: '/login',
       logout: '/login',
       callback: '/login',
-      home: '/list'
+      home: '/index'
     }
   },
   router: {

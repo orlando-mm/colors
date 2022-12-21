@@ -87,7 +87,13 @@
         <v-btn color="primary" depressed @click="initialize"> Reset </v-btn>
       </template>
     </v-data-table>
-    <app-pagination class="mt-10" />
+    <app-pagination
+      v-if="page && numPages > 1"
+      v-model="page"
+      :num-pages="numPages"
+      class="mt-12"
+      @input="pagination"
+    />
   </v-container>
 </template>
 
@@ -96,9 +102,11 @@ import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'ListColors',
-  auth: false,
+  auth: true,
   data: () => ({
     loadingList: false,
+    numPages: null,
+    page: null,
     dialog: false,
     dialogDelete: false,
     desserts: [],
@@ -120,7 +128,8 @@ export default {
   }),
   computed: {
     ...mapGetters({
-      listColors: 'colors/listColors'
+      listColors: 'colors/listColors',
+      listColorsPagination: 'colors/listColorsPagination'
     }),
     formTitle() {
       return this.editedIndex === -1 ? 'New Item' : 'Edit Item';
@@ -152,9 +161,11 @@ export default {
     ...mapActions({
       listColorsAction: 'colors/listColors'
     }),
-    initialize() {
+    async initialize() {
       this.loadingList = true;
-      this.listColorsAction();
+      await this.listColorsAction({ page: 1, per_page: 5 });
+      this.changeNumPages();
+      this.changePage();
       this.loadingList = false;
     },
 
@@ -198,6 +209,19 @@ export default {
         this.desserts.push(this.editedItem);
       }
       this.close();
+    },
+    async pagination(page) {
+      this.loading = true;
+      await this.listColorsAction({ page, per_page: 5 });
+      this.changeNumPages();
+      this.changePage();
+      this.loading = false;
+    },
+    changeNumPages() {
+      this.numPages = this.listColorsPagination?.total_pages || '';
+    },
+    changePage() {
+      this.page = this.listColorsPagination?.current_page || '';
     }
   }
 };
