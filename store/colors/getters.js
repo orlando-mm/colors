@@ -1,8 +1,8 @@
 export default {
   listColors: (state) => {
-    return state.listColors
+    return state.listColors;
   },
   listColorsPagination: (state) => {
-    return state.pagination
-  },
+    return state.pagination;
+  }
 };

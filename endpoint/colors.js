@@ -5,5 +5,6 @@ export default {
     const initialQuery = helper.buildQueryFilter(filter);
     return `${sufi}/${initialQuery}`;
   },
-  create: `${sufi}`
+  create: `${sufi}`,
+  update: (id) => `${sufi}/${id}/`,
 };

@@ -15,31 +15,26 @@
           <v-toolbar-title>Gestionar colores</v-toolbar-title>
           <v-divider class="mx-4" inset vertical></v-divider>
           <v-spacer></v-spacer>
-          <v-dialog v-model="dialog" max-width="500px">
-            <template #activator="{ on, attrs }">
-              <v-btn color="primary" depressed dark small fab class="mb-2" v-bind="attrs" v-on="on">
-                <v-icon>{{ $icons.plus }}</v-icon>
-              </v-btn>
-            </template>
-            <list-form @close="close" @save="save" />
+          <v-btn color="primary" depressed dark small fab class="mb-2" @click="dialog = true">
+            <v-icon>{{ $icons.plus }}</v-icon>
+          </v-btn>
+          <v-dialog v-if="dialog" v-model="dialog" persistent max-width="500px">
+            <list-form :color="color" @close="close" @save="save" />
           </v-dialog>
           <v-dialog v-model="dialogDelete" max-width="500px">
             <list-delete @closeDelete="closeDelete" @deleteItemConfirm="deleteItemConfirm" />
           </v-dialog>
         </v-toolbar>
       </template>
-      <!-- eslint-disable-next-line -->
-      <template #item.bg_color="{ item }">
+      <template #[`item.bg_color`]="{ item }">
         <v-chip :color="item.bg_color" dark style="min-width: 75px">
           {{ item.bg_color }}
         </v-chip>
       </template>
-      <!-- eslint-disable-next-line -->
-      <template #item.active="{ item }">
+      <template #[`item.active`]="{ item }">
         <v-icon :color="item.active ? 'cgreen' : 'cred'">{{ $icons.check }}</v-icon>
       </template>
-      <!-- eslint-disable-next-line -->
-      <template #item.actions="{ item }">
+      <template #[`item.actions`]="{ item }">
         <v-icon small class="mr-2" color="primary" @click="editColor(item)"> {{ $icons.pencil }} </v-icon>
         <v-icon small color="cred" @click="deleteColor(item)"> {{ $icons.delete }} </v-icon>
       </template>
@@ -68,7 +63,8 @@ export default {
     numPages: null,
     page: null,
     dialog: false,
-    dialogDelete: false
+    dialogDelete: false,
+    color: null
   }),
   computed: {
     ...mapGetters({
@@ -85,20 +81,9 @@ export default {
       ];
     }
   },
-
-  /*  watch: {
-    dialog(val) {
-      val || this.close();
-    },
-    dialogDelete(val) {
-      val || this.closeDelete();
-    }
-  },  */
-
   created() {
     this.initialize();
   },
-
   methods: {
     ...mapActions({
       listColorsAction: 'colors/listColors'
@@ -112,6 +97,7 @@ export default {
     },
 
     editColor(item) {
+      this.color = { ...item };
       this.dialog = true;
     },
 
@@ -124,6 +110,7 @@ export default {
     },
 
     close() {
+      this.color = null;
       this.dialog = false;
     },
 

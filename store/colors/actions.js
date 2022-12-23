@@ -13,7 +13,6 @@ export default {
       }
       return { success: true, data };
     } catch (e) {
-      // eslint-disable-next-line no-console
       console.error('colors list action', e);
       if (e.statusCode === 404) throw e;
       return { success: false, data: e };
@@ -28,10 +27,23 @@ export default {
       });
       return { success: true, data };
     } catch (e) {
-      // eslint-disable-next-line no-console
       console.log(e);
       if (e.statusCode === 404) throw e;
       return { success: false, data: e };
     }
-  }
+  },
+  async updateColor(_, { ...payload }) {
+    try {
+      const { data } = await this.$api({
+        method: 'PUT',
+        url: colors.update(payload?.calendar_patterns?.id),
+        data: payload
+      });
+      return { success: true, data };
+    } catch (e) {
+      console.log(e);
+      if (e.statusCode === 404) throw e;
+      return { success: false, data: e };
+    }
+  },
 };

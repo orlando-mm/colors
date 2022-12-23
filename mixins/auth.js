@@ -23,7 +23,6 @@ export default {
             await this.$router.push(this.localePath({ name: 'list' }));
           }
         } catch (e) {
-          // eslint-disable-next-line no-console
           console.error('error en login', e);
           /*  this.errorMessages = (e.response || {}).data
           if (this.errorMessages['non_field_errors']) {
@@ -40,12 +39,10 @@ export default {
       this.loading = true;
       try {
         await this.$auth.logout();
-        // eslint-disable-next-line no-console
         console.log('SE HA CERRADO SESION CORRECTAMENTE');
         window.localStorage.clear();
         await this.$router.push(this.localePath('/'));
       } catch (e) {
-        // eslint-disable-next-line no-console
         console.log('error logout ', e);
       }
       this.loading = false;

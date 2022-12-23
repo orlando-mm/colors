@@ -4,7 +4,6 @@
       <v-card-title>
         <span class="text-h5">{{ formTitle }}</span>
       </v-card-title>
-
       <v-card-text>
         <v-container>
           <v-row class="justify-center">
@@ -36,10 +35,9 @@
           </v-row>
         </v-container>
       </v-card-text>
-
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="primary" text @click="$emit('close')"> Cancel </v-btn>
+        <v-btn color="primary" text @click="cancelEdit"> Cancel </v-btn>
         <v-btn color="primary" :loading="loading" depressed dark @click="toggleAction"> Save </v-btn>
       </v-card-actions>
     </v-card>
@@ -53,9 +51,9 @@ export default {
   name: 'FormColor',
   mixins: [FormMixin],
   props: {
-    editingColor: {
-      type: Boolean,
-      default: false
+    color: {
+      type: Object,
+      default: () => ({})
     }
   },
   data: () => ({
@@ -67,36 +65,78 @@ export default {
     loading: false
   }),
   computed: {
+    isEditingColor() {
+      return !!this.color?.id;
+    },
     formTitle() {
-      return this.editingColor ? 'Editar color' : 'Crear color';
+      return this.isEditingColor ? 'Editar color' : 'Crear color';
     }
+  },
+  mounted() {
+    this.initialize();
   },
   methods: {
     ...mapActions({
-      createColorAction: 'colors/createColor'
+      createColorAction: 'colors/createColor',
+      updateColorAction: 'colors/updateColor'
     }),
+    initialize() {
+      this.resetColor();
+      if (this.color?.id) {
+        this.editedColor = { ...this.color };
+      }
+    },
+    resetColor() {
+      this.editedColor = {
+        text_color: '',
+        bg_color: '',
+        active: 0
+      };
+    },
+    cancelEdit() {
+      this.resetColor();
+      this.$emit('close');
+    },
     toggleAction() {
-      if (this.editingColor) this.editColor();
-      if (!this.editingColor) this.createColor();
+      if (this.isEditingColor) this.editColor();
+      if (!this.isEditingColor) this.createColor();
     },
     async createColor() {
       if (this.$refs.form.validate()) {
         this.loading = true;
-        const color = { calendar_patterns2: { ...this.editedColor } };
+        const color = { calendar_patterns: { ...this.editedColor } };
+        color.calendar_patterns.active = color.calendar_patterns?.active ? 1 : 0
         const { data } = await this.createColorAction(color);
         this.loading = false;
         if (data?.success) {
+          this.resetColor();
           this.$emit('save');
         }
         if (!data.success) {
-          // eslint-disable-next-line no-console
           console.log(data?.data);
         }
       }
     },
-    editColor() {
+    async editColor() {
       if (this.$refs.form.validate()) {
-        this.$emit('save');
+        const color = { calendar_patterns: { ...this.editedColor } };
+        color.calendar_patterns.active = color.calendar_patterns?.active ? 1 : 0
+        if (color?.calendar_patterns?.id) {
+          this.loading = true;
+          const { data } = await this.updateColorAction(color);
+          this.loading = false;
+          if (data?.success) {
+            this.resetColor();
+            this.$emit('save');
+          }
+          if (!data.success) {
+            console.log(data?.data);
+          }
+        }
+        if (!color?.calendar_patterns?.id) {
+          console.log('Vuelva a intentar la edicion');
+          this.cancelEdit();
+        }
       }
     }
   }

@@ -1,4 +1,3 @@
-// import Icons from '~/constants/icons'
 export default {
   theme: {
     options: {
@@ -26,20 +25,7 @@ export default {
         success: '#3aaa35',
         cred: '#F44336',
         cgreen: '#4CAF50'
-
-        /*
-        whatsapp: '#25D366',
-        facebook: '#4267B2',
-        messenger: '#006AFF',
-        twitter: '#1DA1F2',
-        telegram: '#0088cc',
-        */
       }
     }
   }
-  /*
-  icons: {
-    values: Icons,
-  },
-  */
 };
