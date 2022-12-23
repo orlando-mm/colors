@@ -16,32 +16,10 @@ export default {
         password: (value) => {
           return !value || value.length > 7 || this.$t('login.passwordShort');
         }
-        /*
-        requiredProfile: (value) => {
-          return !!value || false
-        },
-        date: (value) => {
-          return (
-            !value ||
-            this.$moment(value, 'DD/MM/YYYY', true).isValid() ||
-            this.$t('login.date')
-          )
-        },
-        positive: (value) => {
-          const pattern = /^\d{0,10}(\.\d{0,2})?$/
-          return pattern.test(value) || this.$t('login.positive')
-        },
-        phone: (value) => {
-          const pattern = /^\+?1?\d{9,15}$/
-          return pattern.test(value) || this.$t('profile.phoneValidation')
-        }, */
       }
     };
   },
   methods: {
-    autocompleteField() {
-      return `${Math.random()}_random_field`;
-    },
     handleErrorResponse(data, showErrorAsMessage) {
       if (!data) {
         return {};
@@ -56,16 +34,11 @@ export default {
       } else {
         message = this.showFirstFieldMessage(data);
       }
-      /*  this.$flash({
-        message: message,
-        color: 'error',
-      })  */
       console.log(message);
       return data;
     },
     handleActionResponse({ success, data, successMessage, showErrorAsMessage }) {
       if (success) {
-        //  successMessage && this.$flash(successMessage)
         successMessage && console.log(successMessage);
         return {};
       } else {

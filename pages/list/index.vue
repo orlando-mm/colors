@@ -21,7 +21,7 @@
                 <v-icon>{{ $icons.plus }}</v-icon>
               </v-btn>
             </template>
-            <list-form @close="close" @save="save"/>
+            <list-form @close="close" @save="save" />
           </v-dialog>
           <v-dialog v-model="dialogDelete" max-width="500px">
             <list-delete @closeDelete="closeDelete" @deleteItemConfirm="deleteItemConfirm" />
@@ -133,6 +133,7 @@ export default {
 
     save() {
       this.close();
+      this.initialize();
     },
     async pagination(page) {
       this.loading = true;
