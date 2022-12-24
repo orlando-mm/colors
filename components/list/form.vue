@@ -120,7 +120,11 @@ export default {
           this.$emit('save');
         }
         if (!data.success) {
-          console.log(data?.message || data?.data);
+          console.log(data?.message || data?.data || this.$t('list.operationFailed'));
+          this.$flash({
+            message: data?.message || data?.data || this.$t('list.operationFailed'),
+            color: 'error'
+          });
           this.cancelEdit();
         }
       }
@@ -135,16 +139,27 @@ export default {
           this.loading = false;
           if (data?.success) {
             console.log(data?.message || this.$t('list.correctlyEditedColor'));
+            this.$flash({
+              message: data?.message || this.$t('list.correctlyEditedColor')
+            });
             this.resetColor();
             this.$emit('save');
           }
           if (!data.success) {
-            console.log(data?.message || data?.data);
+            console.log(data?.message || data?.data || this.$t('list.operationFailed'));
+            this.$flash({
+              message: data?.message || data?.data || this.$t('list.operationFailed'),
+              color: 'error'
+            });
             this.cancelEdit();
           }
         }
         if (!color?.calendar_patterns?.id) {
           console.log(this.$t('list.operationFailed'));
+          this.$flash({
+            message: this.$t('list.operationFailed'),
+            color: 'error'
+          });
           this.cancelEdit();
         }
       }

@@ -33,16 +33,27 @@ export default {
         const { data } = await this.deleteColorAction(this.color?.id);
         this.loading = false;
         if (data?.success) {
-          console.log(data?.message || this.$t('list.colorSuccessfullyRemoved'));
+          console.log(data?.message || data?.data || this.$t('list.colorSuccessfullyRemoved'));
+          this.$flash({
+            message: data?.message || data?.data || this.$t('list.colorSuccessfullyRemoved')
+          });
           this.$emit('deleteColorConfirm');
         }
         if (!data.success) {
-          console.log(data?.message || data?.data);
+          console.log(data?.message || data?.data || this.$t('list.operationFailed'));
+          this.$flash({
+            message: data?.message || data?.data || this.$t('list.operationFailed'),
+            color: 'error'
+          });
           this.$emit('closeDelete');
         }
       }
       if (!this.color?.id) {
         console.log(this.$t('list.operationFailed'));
+        this.$flash({
+          message: this.$t('list.operationFailed'),
+          color: 'error'
+        });
         this.$emit('closeDelete');
       }
     }
