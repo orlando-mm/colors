@@ -7,7 +7,7 @@
       </v-container>
     </v-main>
     <app-footer />
-    <common />
+    <app-common />
   </v-app>
 </template>
 

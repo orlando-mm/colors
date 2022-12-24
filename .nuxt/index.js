@@ -24,6 +24,7 @@ import nuxt_plugin_pluginmain_8f12d416 from 'nuxt_plugin_pluginmain_8f12d416' //
 import nuxt_plugin_i18n_1fba523a from 'nuxt_plugin_i18n_1fba523a' // Source: ../plugins/i18n.js (mode: 'all')
 import nuxt_plugin_utils_1ea7651c from 'nuxt_plugin_utils_1ea7651c' // Source: ../plugins/utils.js (mode: 'all')
 import nuxt_plugin_api_785206da from 'nuxt_plugin_api_785206da' // Source: ../plugins/api.js (mode: 'all')
+import nuxt_plugin_services_4e38a3a3 from 'nuxt_plugin_services_4e38a3a3' // Source: ../plugins/services.js (mode: 'all')
 import nuxt_plugin_auth_14105224 from 'nuxt_plugin_auth_14105224' // Source: ./auth.js (mode: 'all')
 
 // Component: <ClientOnly>
@@ -260,6 +261,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_api_785206da === 'function') {
     await nuxt_plugin_api_785206da(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_services_4e38a3a3 === 'function') {
+    await nuxt_plugin_services_4e38a3a3(app.context, inject)
   }
 
   if (typeof nuxt_plugin_auth_14105224 === 'function') {

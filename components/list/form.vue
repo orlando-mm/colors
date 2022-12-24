@@ -113,6 +113,9 @@ export default {
         this.loading = false;
         if (data?.success) {
           console.log(data?.message || this.$t('list.createdSuccessfully'));
+          this.$flash({
+            message: data?.message || this.$t('list.createdSuccessfully')
+          });
           this.resetColor();
           this.$emit('save');
         }

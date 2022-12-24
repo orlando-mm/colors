@@ -17,6 +17,10 @@ let store = {};
   // Enforce store modules
   store.modules = store.modules || {}
 
+  resolveStoreModules(require('../store/app/actions.js'), 'app/actions.js')
+  resolveStoreModules(require('../store/app/getters.js'), 'app/getters.js')
+  resolveStoreModules(require('../store/app/mutations.js'), 'app/mutations.js')
+  resolveStoreModules(require('../store/app/state.js'), 'app/state.js')
   resolveStoreModules(require('../store/colors/actions.js'), 'colors/actions.js')
   resolveStoreModules(require('../store/colors/getters.js'), 'colors/getters.js')
   resolveStoreModules(require('../store/colors/mutations.js'), 'colors/mutations.js')
@@ -27,6 +31,10 @@ let store = {};
   if (process.client && module.hot) {
     // Whenever any Vuex module is updated...
     module.hot.accept([
+      '../store/app/actions.js',
+      '../store/app/getters.js',
+      '../store/app/mutations.js',
+      '../store/app/state.js',
       '../store/colors/actions.js',
       '../store/colors/getters.js',
       '../store/colors/mutations.js',

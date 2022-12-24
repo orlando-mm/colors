@@ -22,7 +22,12 @@ export default {
   css: ['~/assets/style.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '~/plugins/i18n.js' }, { src: '~/plugins/utils.js' }, { src: '~/plugins/api.js' }],
+  plugins: [
+    { src: '~/plugins/i18n.js' },
+    { src: '~/plugins/utils.js' },
+    { src: '~/plugins/api.js' },
+    { src: '~/plugins/services.js' }
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

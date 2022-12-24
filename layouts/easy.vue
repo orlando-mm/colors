@@ -15,7 +15,7 @@
         <Nuxt />
       </v-container>
     </v-main>
-    <common />
+    <app-common />
   </v-app>
 </template>
 
