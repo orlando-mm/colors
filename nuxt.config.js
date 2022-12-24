@@ -57,12 +57,13 @@ export default {
         }
       }
     },
-    redirect: {
+    redirect: false
+    /* redirect: {
       login: '/login',
-      logout: '/login',
-      callback: '/login',
-      home: '/index'
-    }
+      logout: '/',
+      callback: 'login',
+      home: '/'
+    } */
   },
   router: {
     middleware: ['auth'],

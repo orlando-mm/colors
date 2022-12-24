@@ -46,7 +46,7 @@ export default {
       }
     },
     showFirstFieldMessage(data) {
-      const defaultMessage = this.$t('appMessages.unknownError');
+      const defaultMessage = this.$t('validation.unknownError');
       let message = '';
       try {
         message = Object.values(data)[0];

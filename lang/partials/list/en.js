@@ -18,5 +18,6 @@ export default {
   colorSuccessfullyRemoved: 'Color successfully removed',
   addToFavorites: 'Add to Favorites',
   successfulOperation: 'Successful operation',
-  actions: 'Actions'
+  actions: 'Actions',
+  loadingPleaseWait: 'Loading... Please wait'
 };

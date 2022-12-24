@@ -20,7 +20,7 @@ export default {
           if (data?.success) {
             await this.$auth.strategy.token.set(data?.data?.result?.access_token);
             await this.$auth.setUser(data?.data?.result?.name);
-            await this.$router.push(this.localePath({ name: 'list' }));
+            await this.$router.push(this.localePath('/'));
           }
         } catch (e) {
           console.error(this.$t('list.operationFailed'), e);

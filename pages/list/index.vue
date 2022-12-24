@@ -2,7 +2,7 @@
   <v-container>
     <v-data-table
       :loading="loadingList"
-      loading-text="Loading... Please wait"
+      :loading-text="$t('list.loadingPleaseWait')"
       :headers="headers"
       :items="listColors"
       :sort-by="['bg_color', 'active']"
