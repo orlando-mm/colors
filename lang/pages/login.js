@@ -1,7 +1,8 @@
 const Login = {
   'login/index': {
     en: '/authenticate',
-    es: '/autenticarse'
+    es: '/autenticarse',
+    pt: '/autenticar'
   }
 };
 

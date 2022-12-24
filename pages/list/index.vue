@@ -35,8 +35,9 @@
         <v-icon :color="item.active ? 'cgreen' : 'cred'">{{ $icons.check }}</v-icon>
       </template>
       <template #[`item.actions`]="{ item }">
-        <v-icon small class="mr-2" color="primary" @click="editColor(item)"> {{ $icons.pencil }} </v-icon>
-        <v-icon small color="cred" @click="deleteColor(item)"> {{ $icons.delete }} </v-icon>
+        <v-icon small class="mr-2" color="cred" @click="deleteColor(item)"> {{ $icons.delete }} </v-icon>
+        <v-icon small class="mr-2" color="cgreen" @click="showColor(item)"> {{ $icons.eye }} </v-icon>
+        <v-icon small color="primary" @click="editColor(item)"> {{ $icons.pencil }} </v-icon>
       </template>
       <template #no-data>
         <v-btn color="primary" depressed @click="initialize"> Reset </v-btn>
@@ -121,6 +122,16 @@ export default {
     save() {
       this.close();
       this.initialize();
+    },
+    showColor(color) {
+      this.$router.push(
+        this.localePath({
+          name: 'color-slug',
+          params: {
+            slug: color.id
+          }
+        })
+      );
     },
     async pagination(page) {
       this.loading = true;

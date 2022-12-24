@@ -1,7 +1,8 @@
 const List = {
   'list/index': {
-    en: '/list',
-    es: '/list'
+    en: '/color-list',
+    es: '/listado-colores',
+    pt: '/lista-cores'
   }
 };
 

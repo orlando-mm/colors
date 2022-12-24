@@ -1,4 +1,5 @@
 export default () => ({
   listColors: [],
-  pagination: {}
+  pagination: {},
+  color: {}
 });

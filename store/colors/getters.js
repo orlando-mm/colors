@@ -4,5 +4,8 @@ export default {
   },
   listColorsPagination: (state) => {
     return state.pagination;
+  },
+  showColor: (state) => {
+    return state.color;
   }
 };

@@ -7,6 +7,7 @@ import scrollBehavior from './router.scrollBehavior.js'
 const _4cc4cbd2 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 const _66303c5e = () => interopDefault(import('../pages/list/index.vue' /* webpackChunkName: "pages/list/index" */))
 const _166c6ee9 = () => interopDefault(import('../pages/login.vue' /* webpackChunkName: "pages/login" */))
+const _4db0b8e1 = () => interopDefault(import('../pages/color/_slug/index.vue' /* webpackChunkName: "pages/color/_slug/index" */))
 
 const emptyFn = () => {}
 
@@ -35,7 +36,7 @@ export const routerOptions = {
     pathToRegexpOptions: {"strict":true},
     name: "index___pt"
   }, {
-    path: "/en/list/",
+    path: "/en/color-list/",
     component: _66303c5e,
     pathToRegexpOptions: {"strict":true},
     name: "list___en"
@@ -45,7 +46,7 @@ export const routerOptions = {
     pathToRegexpOptions: {"strict":true},
     name: "login___en"
   }, {
-    path: "/es/list/",
+    path: "/es/listado-colores/",
     component: _66303c5e,
     pathToRegexpOptions: {"strict":true},
     name: "list___es"
@@ -55,7 +56,7 @@ export const routerOptions = {
     pathToRegexpOptions: {"strict":true},
     name: "login___es"
   }, {
-    path: "/pt/list/",
+    path: "/pt/lista-cores/",
     component: _66303c5e,
     pathToRegexpOptions: {"strict":true},
     name: "list___pt"
@@ -64,6 +65,21 @@ export const routerOptions = {
     component: _166c6ee9,
     pathToRegexpOptions: {"strict":true},
     name: "login___pt"
+  }, {
+    path: "/en/:slug/",
+    component: _4db0b8e1,
+    pathToRegexpOptions: {"strict":true},
+    name: "color-slug___en"
+  }, {
+    path: "/es/:slug/",
+    component: _4db0b8e1,
+    pathToRegexpOptions: {"strict":true},
+    name: "color-slug___es"
+  }, {
+    path: "/pt/:slug/",
+    component: _4db0b8e1,
+    pathToRegexpOptions: {"strict":true},
+    name: "color-slug___pt"
   }],
 
   fallback: false

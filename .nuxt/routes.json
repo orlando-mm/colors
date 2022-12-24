@@ -31,7 +31,7 @@
   },
   {
     "name": "list___en",
-    "path": "/en/list/",
+    "path": "/en/color-list/",
     "component": "/Users/orlando/WebstormProjects/colors/pages/list/index.vue",
     "chunkName": "pages/list/index",
     "pathToRegexpOptions": {
@@ -51,7 +51,7 @@
   },
   {
     "name": "list___es",
-    "path": "/es/list/",
+    "path": "/es/listado-colores/",
     "component": "/Users/orlando/WebstormProjects/colors/pages/list/index.vue",
     "chunkName": "pages/list/index",
     "pathToRegexpOptions": {
@@ -71,7 +71,7 @@
   },
   {
     "name": "list___pt",
-    "path": "/pt/list/",
+    "path": "/pt/lista-cores/",
     "component": "/Users/orlando/WebstormProjects/colors/pages/list/index.vue",
     "chunkName": "pages/list/index",
     "pathToRegexpOptions": {
@@ -88,5 +88,35 @@
       "strict": true
     },
     "_name": "_166c6ee9"
+  },
+  {
+    "name": "color-slug___en",
+    "path": "/en/:slug/",
+    "component": "/Users/orlando/WebstormProjects/colors/pages/color/_slug/index.vue",
+    "chunkName": "pages/color/_slug/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_4db0b8e1"
+  },
+  {
+    "name": "color-slug___es",
+    "path": "/es/:slug/",
+    "component": "/Users/orlando/WebstormProjects/colors/pages/color/_slug/index.vue",
+    "chunkName": "pages/color/_slug/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_4db0b8e1"
+  },
+  {
+    "name": "color-slug___pt",
+    "path": "/pt/:slug/",
+    "component": "/Users/orlando/WebstormProjects/colors/pages/color/_slug/index.vue",
+    "chunkName": "pages/color/_slug/index",
+    "pathToRegexpOptions": {
+      "strict": true
+    },
+    "_name": "_4db0b8e1"
   }
 ]

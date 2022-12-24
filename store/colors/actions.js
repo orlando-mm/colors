@@ -46,4 +46,17 @@ export default {
       return { success: false, data: e };
     }
   },
+  async showColor({ commit }, id) {
+    try {
+      const { data } = await this.$api.get(colors.show(id));
+      if (data?.data) {
+        commit('SET_SHOW_COLOR', data.data);
+      }
+      return { success: true, data };
+    } catch (e) {
+      console.log(e);
+      if (e.statusCode === 404) throw e;
+      return { success: false, data: e };
+    }
+  }
 };
