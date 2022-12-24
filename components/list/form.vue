@@ -109,11 +109,13 @@ export default {
         const { data } = await this.createColorAction(color);
         this.loading = false;
         if (data?.success) {
+          console.log(data?.message || 'Color creado correctamente')
           this.resetColor();
           this.$emit('save');
         }
         if (!data.success) {
-          console.log(data?.data);
+          console.log(data?.message  || data?.data);
+          this.cancelEdit();
         }
       }
     },
@@ -126,11 +128,13 @@ export default {
           const { data } = await this.updateColorAction(color);
           this.loading = false;
           if (data?.success) {
+            console.log(data?.message || 'Color editado correctamente')
             this.resetColor();
             this.$emit('save');
           }
           if (!data.success) {
-            console.log(data?.data);
+            console.log(data?.message  || data?.data);
+            this.cancelEdit();
           }
         }
         if (!color?.calendar_patterns?.id) {

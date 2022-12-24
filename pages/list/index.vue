@@ -21,8 +21,8 @@
           <v-dialog v-if="dialog" v-model="dialog" persistent max-width="500px">
             <list-form :color="color" @close="close" @save="save" />
           </v-dialog>
-          <v-dialog v-model="dialogDelete" max-width="500px">
-            <list-delete @closeDelete="closeDelete" @deleteItemConfirm="deleteItemConfirm" />
+          <v-dialog v-if="dialogDelete" v-model="dialogDelete" max-width="500px">
+            <list-delete :color="color" @closeDelete="closeDelete" @deleteColorConfirm="deleteColorConfirm" />
           </v-dialog>
         </v-toolbar>
       </template>
@@ -103,11 +103,13 @@ export default {
     },
 
     deleteColor(item) {
+      this.color = { ...item };
       this.dialogDelete = true;
     },
 
-    deleteItemConfirm() {
+    deleteColorConfirm() {
       this.closeDelete();
+      this.initialize();
     },
 
     close() {
@@ -116,6 +118,7 @@ export default {
     },
 
     closeDelete() {
+      this.color = null;
       this.dialogDelete = false;
     },
 

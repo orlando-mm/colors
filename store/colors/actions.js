@@ -58,5 +58,15 @@ export default {
       if (e.statusCode === 404) throw e;
       return { success: false, data: e };
     }
-  }
+  },
+  async deleteColor(_, id) {
+    try {
+      const { data } = await this.$api.delete(colors.delete(id));
+      return { success: true, data };
+    } catch (e) {
+      console.log(e);
+      if (e.statusCode === 404) throw e;
+      return { success: false, data: e };
+    }
+  },
 };

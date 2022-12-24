@@ -8,4 +8,5 @@ export default {
   create: `${sufi}`,
   update: (id) => `${sufi}/${id}/`,
   show: (id) => `${sufi}/${id}/`,
+  delete: (id) => `${sufi}/${id}/`,
 };
