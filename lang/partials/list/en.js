@@ -1,4 +1,22 @@
 export default {
   colorList: 'Color list',
-
+  manageColors: 'Manage colors',
+  reset: 'Reset',
+  editColor: 'Edit color',
+  createColor: 'Create color',
+  name: 'Name',
+  background: 'Background',
+  active: 'Active',
+  inactive: 'Inactive',
+  cancel: 'Cancel',
+  save: 'Save',
+  createdSuccessfully: 'Color created successfully',
+  correctlyEditedColor: 'Correctly edited color',
+  operationFailed: 'Operation failed, try again',
+  youWantToRemove: 'Are you sure you want to remove this color?',
+  confirm: 'Confirm',
+  colorSuccessfullyRemoved: 'Color successfully removed',
+  addToFavorites: 'Add to Favorites',
+  successfulOperation: 'Successful operation',
+  actions: 'Actions'
 };

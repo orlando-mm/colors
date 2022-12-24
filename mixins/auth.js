@@ -23,14 +23,7 @@ export default {
             await this.$router.push(this.localePath({ name: 'list' }));
           }
         } catch (e) {
-          console.error('error en login', e);
-          /*  this.errorMessages = (e.response || {}).data
-          if (this.errorMessages['non_field_errors']) {
-            console.log(this.errorMessages['non_field_errors'][0])
-          }
-          if (this.errorMessages.code === 'user_not_found') {
-            console.log(this.errorMessages.detail)
-          } */
+          console.error(this.$t('list.operationFailed'), e);
         }
         this.loading = false;
       }
@@ -39,7 +32,7 @@ export default {
       this.loading = true;
       try {
         await this.$auth.logout();
-        console.log('SE HA CERRADO SESION CORRECTAMENTE');
+        console.log(this.$t('list.successfulOperation'));
         window.localStorage.clear();
         await this.$router.push(this.localePath('/'));
       } catch (e) {

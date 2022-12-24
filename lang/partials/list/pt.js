@@ -1,3 +1,22 @@
 export default {
   colorList: 'lista de cores',
+  manageColors: 'Gerenciar cores',
+  reset: 'Reiniciar',
+  editColor: 'Editar cor',
+  createColor: 'Criar cor',
+  name: 'Nome',
+  background: 'Background',
+  active: 'Ativo',
+  inactive: 'Inativo',
+  cancel: 'Cancelar',
+  save: 'Salve',
+  createdSuccessfully: 'Cor criada com sucesso',
+  correctlyEditedColor: 'Cor editada corretamente',
+  operationFailed: 'Falha na operação, tente novamente',
+  youWantToRemove: 'Tem certeza de que deseja remover esta cor?',
+  confirm: 'Confirme',
+  colorSuccessfullyRemoved: 'Cor removida com sucesso',
+  addToFavorites: 'Adicionar aos favoritos',
+  successfulOperation: 'Operação bem sucedida',
+  actions: 'Ações'
 };

@@ -6,8 +6,7 @@
     "chunkName": "pages/index",
     "pathToRegexpOptions": {
       "strict": true
-    },
-    "_name": "_4cc4cbd2"
+    }
   },
   {
     "name": "index___es",
@@ -16,8 +15,7 @@
     "chunkName": "pages/index",
     "pathToRegexpOptions": {
       "strict": true
-    },
-    "_name": "_4cc4cbd2"
+    }
   },
   {
     "name": "index___pt",
@@ -26,8 +24,7 @@
     "chunkName": "pages/index",
     "pathToRegexpOptions": {
       "strict": true
-    },
-    "_name": "_4cc4cbd2"
+    }
   },
   {
     "name": "list___en",
@@ -36,8 +33,7 @@
     "chunkName": "pages/list/index",
     "pathToRegexpOptions": {
       "strict": true
-    },
-    "_name": "_66303c5e"
+    }
   },
   {
     "name": "login___en",
@@ -46,8 +42,7 @@
     "chunkName": "pages/login",
     "pathToRegexpOptions": {
       "strict": true
-    },
-    "_name": "_166c6ee9"
+    }
   },
   {
     "name": "list___es",
@@ -56,8 +51,7 @@
     "chunkName": "pages/list/index",
     "pathToRegexpOptions": {
       "strict": true
-    },
-    "_name": "_66303c5e"
+    }
   },
   {
     "name": "login___es",
@@ -66,8 +60,7 @@
     "chunkName": "pages/login",
     "pathToRegexpOptions": {
       "strict": true
-    },
-    "_name": "_166c6ee9"
+    }
   },
   {
     "name": "list___pt",
@@ -76,8 +69,7 @@
     "chunkName": "pages/list/index",
     "pathToRegexpOptions": {
       "strict": true
-    },
-    "_name": "_66303c5e"
+    }
   },
   {
     "name": "login___pt",
@@ -86,8 +78,7 @@
     "chunkName": "pages/login",
     "pathToRegexpOptions": {
       "strict": true
-    },
-    "_name": "_166c6ee9"
+    }
   },
   {
     "name": "color-slug___en",
@@ -96,8 +87,7 @@
     "chunkName": "pages/color/_slug/index",
     "pathToRegexpOptions": {
       "strict": true
-    },
-    "_name": "_4db0b8e1"
+    }
   },
   {
     "name": "color-slug___es",
@@ -106,8 +96,7 @@
     "chunkName": "pages/color/_slug/index",
     "pathToRegexpOptions": {
       "strict": true
-    },
-    "_name": "_4db0b8e1"
+    }
   },
   {
     "name": "color-slug___pt",
@@ -116,7 +105,6 @@
     "chunkName": "pages/color/_slug/index",
     "pathToRegexpOptions": {
       "strict": true
-    },
-    "_name": "_4db0b8e1"
+    }
   }
 ]

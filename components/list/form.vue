@@ -14,7 +14,7 @@
                 dense
                 color="primary"
                 placeholder="Rojo"
-                :label="'Nombre'"
+                :label="`${$t('list.name')}`"
                 :rules="[rules.required]"
               ></v-text-field>
             </v-col>
@@ -25,20 +25,23 @@
                 dense
                 color="primary"
                 placeholder="red"
-                :label="'Background'"
+                :label="`${$t('list.background')}`"
                 :rules="[rules.required]"
               ></v-text-field>
             </v-col>
             <v-col cols="12" sm="6" md="4">
-              <v-switch v-model="editedColor.active" :label="editedColor.active ? `Activo` : 'Inactivo'"></v-switch>
+              <v-switch
+                v-model="editedColor.active"
+                :label="editedColor.active ? $t('list.active') : $t('list.inactive')"
+              ></v-switch>
             </v-col>
           </v-row>
         </v-container>
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="primary" text @click="cancelEdit"> Cancel </v-btn>
-        <v-btn color="primary" :loading="loading" depressed dark @click="toggleAction"> Save </v-btn>
+        <v-btn color="primary" text @click="cancelEdit">{{ $t('list.cancel') }}</v-btn>
+        <v-btn color="primary" :loading="loading" depressed dark @click="toggleAction"> {{ $t('list.save') }} </v-btn>
       </v-card-actions>
     </v-card>
   </v-form>
@@ -69,7 +72,7 @@ export default {
       return !!this.color?.id;
     },
     formTitle() {
-      return this.isEditingColor ? 'Editar color' : 'Crear color';
+      return this.isEditingColor ? this.$t('list.editColor') : this.$t('list.createColor');
     }
   },
   mounted() {
@@ -105,16 +108,16 @@ export default {
       if (this.$refs.form.validate()) {
         this.loading = true;
         const color = { calendar_patterns: { ...this.editedColor } };
-        color.calendar_patterns.active = color.calendar_patterns?.active ? 1 : 0
+        color.calendar_patterns.active = color.calendar_patterns?.active ? 1 : 0;
         const { data } = await this.createColorAction(color);
         this.loading = false;
         if (data?.success) {
-          console.log(data?.message || 'Color creado correctamente')
+          console.log(data?.message || this.$t('list.createdSuccessfully'));
           this.resetColor();
           this.$emit('save');
         }
         if (!data.success) {
-          console.log(data?.message  || data?.data);
+          console.log(data?.message || data?.data);
           this.cancelEdit();
         }
       }
@@ -122,23 +125,23 @@ export default {
     async editColor() {
       if (this.$refs.form.validate()) {
         const color = { calendar_patterns: { ...this.editedColor } };
-        color.calendar_patterns.active = color.calendar_patterns?.active ? 1 : 0
+        color.calendar_patterns.active = color.calendar_patterns?.active ? 1 : 0;
         if (color?.calendar_patterns?.id) {
           this.loading = true;
           const { data } = await this.updateColorAction(color);
           this.loading = false;
           if (data?.success) {
-            console.log(data?.message || 'Color editado correctamente')
+            console.log(data?.message || this.$t('list.correctlyEditedColor'));
             this.resetColor();
             this.$emit('save');
           }
           if (!data.success) {
-            console.log(data?.message  || data?.data);
+            console.log(data?.message || data?.data);
             this.cancelEdit();
           }
         }
         if (!color?.calendar_patterns?.id) {
-          console.log('Vuelva a intentar la edicion');
+          console.log(this.$t('list.operationFailed'));
           this.cancelEdit();
         }
       }

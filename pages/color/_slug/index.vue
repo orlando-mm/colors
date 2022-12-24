@@ -10,11 +10,13 @@
           <h4>{{ activeColor }}</h4>
         </v-card-subtitle>
         <v-card-actions>
-          <v-btn text> Agregar a favoritos </v-btn>
+          <v-btn text>{{ $t('list.addToFavorites') }}</v-btn>
         </v-card-actions>
       </v-card>
     </div>
-    <div v-else class="error">Error mostrando color, vuelva a la lista</div>
+    <div v-else>
+      <span class="app-heading--5 error--text">{{ $t('list.operationFailed') }}</span>
+    </div>
   </div>
 </template>
 
@@ -40,7 +42,7 @@ export default {
       return this.color?.text_color || '';
     },
     activeColor() {
-      return this.color?.active ? 'Activo' : 'Inactivo';
+      return this.color?.active ? this.$t('list.active') : this.$t('list.inactive');
     }
   },
   created() {

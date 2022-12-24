@@ -12,16 +12,16 @@
     >
       <template #top>
         <v-toolbar flat>
-          <v-toolbar-title>Gestionar colores</v-toolbar-title>
+          <v-toolbar-title>{{ $t('list.manageColors') }}</v-toolbar-title>
           <v-divider class="mx-4" inset vertical></v-divider>
           <v-spacer></v-spacer>
           <v-btn color="primary" depressed dark small fab class="mb-2" @click="dialog = true">
             <v-icon>{{ $icons.plus }}</v-icon>
           </v-btn>
-          <v-dialog v-if="dialog" v-model="dialog" persistent max-width="500px">
+          <v-dialog v-if="dialog" v-model="dialog" persistent max-width="600px">
             <list-form :color="color" @close="close" @save="save" />
           </v-dialog>
-          <v-dialog v-if="dialogDelete" v-model="dialogDelete" max-width="500px">
+          <v-dialog v-if="dialogDelete" v-model="dialogDelete" persistent max-width="600px">
             <list-delete :color="color" @closeDelete="closeDelete" @deleteColorConfirm="deleteColorConfirm" />
           </v-dialog>
         </v-toolbar>
@@ -40,7 +40,7 @@
         <v-icon small color="primary" @click="editColor(item)"> {{ $icons.pencil }} </v-icon>
       </template>
       <template #no-data>
-        <v-btn color="primary" depressed @click="initialize"> Reset </v-btn>
+        <v-btn color="primary" depressed @click="initialize">{{$t('list.reset')}}</v-btn>
       </template>
     </v-data-table>
     <app-pagination
@@ -74,11 +74,11 @@ export default {
     }),
     headers() {
       return [
-        { text: 'Text', value: 'text_color' },
-        { text: 'Background', value: 'bg_color' },
-        { text: 'Activo', value: 'active' },
+        { text: this.$t('list.name'), value: 'text_color' },
+        { text: this.$t('list.background'), value: 'bg_color' },
+        { text: this.$t('list.active'), value: 'active' },
         // { text: 'Order', value: 'order' },
-        { text: 'Actions', value: 'actions', sortable: false }
+        { text: this.$t('list.actions'), value: 'actions', sortable: false }
       ];
     }
   },
